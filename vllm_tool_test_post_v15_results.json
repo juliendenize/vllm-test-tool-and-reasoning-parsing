@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "timestamp": "2026-03-14T21:41:39.987191+00:00",
-    "model": "mistralai/Secret",
+    "timestamp": "2026-03-14T22:57:13.282129+00:00",
+    "model": "mistralai/v15",
     "base_url": "http://localhost:8000/v1",
     "total_tests": 48,
     "passed": 48,
@@ -15,7 +15,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 1.3819330069818534,
+      "duration_s": 1.0514363439870067,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -43,7 +43,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "j95y80ix2",
+          "id": "g87woy2iV",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -65,7 +65,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.07676554698264226,
+      "duration_s": 0.07506906898925081,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -101,7 +101,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.14543527702335268,
+      "duration_s": 0.1441164799616672,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -132,7 +132,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.1367204409907572,
+      "duration_s": 0.13554618897615,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -160,7 +160,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "Q8b6ZJLht",
+          "id": "cNo1w3ApN",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -187,7 +187,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.13621621002675965,
+      "duration_s": 0.13544336101040244,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -220,7 +220,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "kkqRL1Bu5",
+          "id": "qzD1vIAkC",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -247,7 +247,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.08013546402798966,
+      "duration_s": 0.07995830400614068,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -280,7 +280,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "LUoJnMyWH",
+          "id": "1ZtVBFekZ",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -300,7 +300,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 1.2419986550230533,
+      "duration_s": 0.5840674209757708,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -315,11 +315,11 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (927 chars)",
+          "actual": "content (522 chars)",
           "passed": true
         }
       },
-      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- **[Weather.com (The Weather Channel)](https://weather.com/weather/today/l/Dallas+TX)**\n- **[AccuWeather](https://www.accuweather.com/en/us/dallas/75201/weather-forecast/331154)**\n- **[National Weather Service (NWS)](https://www.weather.gov/fwd/)**\n\n### **Current Weather (Example - Check for Real-Time Data)**\n*(Note: Weather changes frequently, so for the most accurate and up-to-date temperature, humidity, and conditions, visit one of the links above.)*\n\nAs of my last update, Dallas typically has:\n- **Summer (June\u2013August):** Highs around **95\u2013105\u00b0F**, lows around **75\u201380\u00b0F**\n- **Winter (December\u2013February):** Highs around **50\u201360\u00b0F**, lows around **30\u201340\u00b0F**\n- **Spring/Fall:** Mild temperatures, often **70\u201385\u00b0F** during the day.\n\nWould you like a **5-day forecast** or historical averages? Let me know!",
+      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- [Weather.com (The Weather Channel)](https://weather.com)\n- [AccuWeather](https://www.accuweather.com)\n- [National Weather Service (NWS)](https://www.weather.gov)\n\nAs of my last update, I don\u2019t have real-time data, but you can quickly find the current temperature, conditions, and forecast for Dallas by visiting any of these sites.\n\nWould you like me to help you interpret the weather data once you check?",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -331,7 +331,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.14181002299301326,
+      "duration_s": 0.1508512559812516,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -346,11 +346,11 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (98 chars)",
+          "actual": "content (101 chars)",
           "passed": true
         }
       },
-      "content": "Here's a short one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "content": "Here's a short one for you:\n\n**Why do programmers prefer dark mode?**\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -362,7 +362,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.141105193994008,
+      "duration_s": 0.1408187499619089,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -390,7 +390,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "nVSpBgtda",
+          "id": "MswylvYbS",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -412,7 +412,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.07438584300689399,
+      "duration_s": 0.07470917399041355,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -448,7 +448,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.13881943898741156,
+      "duration_s": 0.13943370000924915,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -479,7 +479,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.13604609202593565,
+      "duration_s": 0.13604470196878538,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -507,7 +507,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "TDcrD2xW7",
+          "id": "oJM1NbWOu",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -534,8 +534,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.13601330196252093,
-      "finish_reason": "stop",
+      "duration_s": 0.13629990798654035,
+      "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
           "expected": "no error",
@@ -553,8 +553,8 @@
           "passed": true
         },
         "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
+          "expected": "tool_calls",
+          "actual": "tool_calls",
           "passed": true
         },
         "named_tool_match": {
@@ -567,7 +567,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "rIGnBCU7w",
+          "id": "n0JFjGtW0",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -594,8 +594,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.08027673198375851,
-      "finish_reason": "stop",
+      "duration_s": 0.08102618699194863,
+      "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
           "expected": "no error",
@@ -613,8 +613,8 @@
           "passed": true
         },
         "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
+          "expected": "tool_calls",
+          "actual": "tool_calls",
           "passed": true
         },
         "named_tool_match": {
@@ -627,7 +627,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "GSz4IeLoR",
+          "id": "X3sXy7d3y",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -647,7 +647,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.5821606519748457,
+      "duration_s": 0.9524118110421114,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -662,11 +662,11 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (522 chars)",
+          "actual": "content (738 chars)",
           "passed": true
         }
       },
-      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- [Weather.com (The Weather Channel)](https://weather.com)\n- [AccuWeather](https://www.accuweather.com)\n- [National Weather Service (NWS)](https://www.weather.gov)\n\nAs of my last update, I don\u2019t have real-time data, but you can quickly find the current temperature, conditions, and forecast for Dallas by visiting any of these sites.\n\nWould you like me to help you interpret the weather data once you check?",
+      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- **[Weather.com (The Weather Channel)](https://weather.com/weather/today/l/Dallas+TX)**\n- **[AccuWeather](https://www.accuweather.com/en/us/dallas/75201/weather-forecast/351196)**\n- **[National Weather Service (NWS)](https://www.weather.gov/fwd/)**\n\n### **Current Weather (Example - Check for Updates)**\n*(Note: Weather changes frequently, so verify with a live source.)*\n\n- **Temperature:** ~75\u201390\u00b0F (varies by season)\n- **Conditions:** Sunny, partly cloudy, or rainy (depending on the day)\n- **Humidity:** Often high in summer\n\nWould you like a **5-day forecast** or specific details (e.g., humidity, wind)? Let me know!",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -678,7 +678,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.1395951670128852,
+      "duration_s": 0.14920857100514695,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -693,11 +693,11 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (98 chars)",
+          "actual": "content (101 chars)",
           "passed": true
         }
       },
-      "content": "Here's a short one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "content": "Here's a short one for you:\n\n**Why do programmers prefer dark mode?**\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -709,7 +709,7 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.13594288396416232,
+      "duration_s": 0.13687626004684716,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -742,7 +742,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "ur8RiFie0",
+          "id": "UzoAN0EBR",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -764,7 +764,7 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.0731539319967851,
+      "duration_s": 0.0730866679805331,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -805,7 +805,7 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.13875762996030971,
+      "duration_s": 0.13832156697753817,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -841,7 +841,7 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.13539776200195774,
+      "duration_s": 0.1358187649748288,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -874,7 +874,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "IdKBHjbGz",
+          "id": "X8lH68OIF",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -901,7 +901,7 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.13543650100473315,
+      "duration_s": 0.137264323013369,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -939,7 +939,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "pEdEJKNHO",
+          "id": "r3n6ws700",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -966,7 +966,7 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.07980372896417975,
+      "duration_s": 0.07961637998232618,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1004,7 +1004,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "hwM4XAwKt",
+          "id": "cKnL3JwSO",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -1024,7 +1024,7 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.5814626420033164,
+      "duration_s": 0.9135101509746164,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1039,7 +1039,7 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (522 chars)",
+          "actual": "content (710 chars)",
           "passed": true
         },
         "no_reasoning": {
@@ -1048,7 +1048,7 @@
           "passed": true
         }
       },
-      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- [Weather.com (The Weather Channel)](https://weather.com)\n- [AccuWeather](https://www.accuweather.com)\n- [National Weather Service (NWS)](https://www.weather.gov)\n\nAs of my last update, I don\u2019t have real-time data, but you can quickly find the current temperature, conditions, and forecast for Dallas by visiting one of these sites.\n\nWould you like me to help you interpret the weather data once you check?",
+      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- **[Weather.com (The Weather Channel)](https://weather.com/weather/today/l/Dallas+TX)**\n- **[AccuWeather](https://www.accuweather.com/en/us/dallas/75201/weather-forecast/33115)**\n- **[National Weather Service (NWS)](https://www.weather.gov/fwd/)**\n\n### **Current Weather (Example - Check for Updates)**\n*(Note: Weather changes frequently, so verify with a live source.)*\n\n- **Temperature:** ~75\u201390\u00b0F (varies by season)\n- **Conditions:** Sunny, partly cloudy, or rainy (depending on the day)\n- **Humidity:** Often high in summer\n\nWould you like a **5-day forecast** or more details? Let me know!",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -1060,7 +1060,7 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.14842831197893247,
+      "duration_s": 0.1501537379808724,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1096,7 +1096,7 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.1352582440013066,
+      "duration_s": 0.13589628401678056,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1129,7 +1129,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "gqESI89bI",
+          "id": "nxqhKh8jd",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1151,7 +1151,7 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.07541401800699532,
+      "duration_s": 0.07645473803859204,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1192,7 +1192,7 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.1393278610194102,
+      "duration_s": 0.1398665330489166,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1228,7 +1228,7 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.13573231705231592,
+      "duration_s": 0.13597610197030008,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1261,7 +1261,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "QBuTYWH9y",
+          "id": "d8gfNttq5",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1288,8 +1288,8 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.13581466500181705,
-      "finish_reason": "stop",
+      "duration_s": 0.1358855339931324,
+      "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
           "expected": "no error",
@@ -1307,8 +1307,8 @@
           "passed": true
         },
         "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
+          "expected": "tool_calls",
+          "actual": "tool_calls",
           "passed": true
         },
         "named_tool_match": {
@@ -1326,7 +1326,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "F8uExjjTe",
+          "id": "vZNb8iieg",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1353,8 +1353,8 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.0802639210014604,
-      "finish_reason": "stop",
+      "duration_s": 0.08063649403629825,
+      "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
           "expected": "no error",
@@ -1372,8 +1372,8 @@
           "passed": true
         },
         "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
+          "expected": "tool_calls",
+          "actual": "tool_calls",
           "passed": true
         },
         "named_tool_match": {
@@ -1391,7 +1391,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "xH4GoUFWH",
+          "id": "J4M9wrDli",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -1411,7 +1411,7 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 1.5190106030204333,
+      "duration_s": 0.6051113599678501,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1426,7 +1426,7 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (1113 chars)",
+          "actual": "content (516 chars)",
           "passed": true
         },
         "no_reasoning": {
@@ -1435,7 +1435,7 @@
           "passed": true
         }
       },
-      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- **[Weather.com (The Weather Channel)](https://weather.com/weather/today/l/Dallas+TX)**\n- **[AccuWeather](https://www.accuweather.com/en/us/dallas/75201/weather-forecast/347621)**\n- **[National Weather Service (NWS)](https://www.weather.gov/fwd/)**\n\n### **Quick Check (Example Data - May 2024)**\n*(For the most accurate and up-to-date info, visit one of the links above.)*\n\n| **Time**       | **Temperature (\u00b0F)** | **Conditions**       |\n|----------------|----------------------|----------------------|\n| **Now**        | ~75\u201385\u00b0F (varies)    | Sunny/Partly Cloudy  |\n| **Today High** | ~88\u201392\u00b0F             | Mostly Sunny         |\n| **Tonight Low**| ~68\u201372\u00b0F             | Clear Skies          |\n\n### **Key Notes:**\n- **Summer (June\u2013August):** Often **90\u2013100\u00b0F+** with high humidity.\n- **Winter (December\u2013February):** Typically **40\u201360\u00b0F**, but can drop below freezing.\n- **Spring/Fall:** Mild, ranging from **60\u201385\u00b0F**.\n\nWould you like a **5-day forecast** or historical averages? Let me know!",
+      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- [Weather.com (The Weather Channel)](https://weather.com)\n- [AccuWeather](https://www.accuweather.com)\n- [National Weather Service (NWS)](https://www.weather.gov)\n\nFor example, as of my last update, Dallas typically has temperatures ranging from **40\u00b0F to 90\u00b0F** depending on the season. For real-time data, I recommend checking one of the links above.\n\nWould you like a forecast for a specific date?",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -1447,7 +1447,7 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.15010328497737646,
+      "duration_s": 0.1404552639578469,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1462,7 +1462,7 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (101 chars)",
+          "actual": "content (98 chars)",
           "passed": true
         },
         "no_reasoning": {
@@ -1471,7 +1471,7 @@
           "passed": true
         }
       },
-      "content": "Here's a short one for you:\n\n**Why do programmers prefer dark mode?**\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "content": "Here's a short one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -1483,7 +1483,7 @@
       "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.5248070660163648,
+      "duration_s": 0.5201507220044732,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1508,10 +1508,10 @@
         }
       },
       "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
       "tool_calls": [
         {
-          "id": "Husqodz1Q",
+          "id": "8g8cY98UV",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1533,7 +1533,7 @@
       "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.31940440397011116,
+      "duration_s": 0.3190493099973537,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1574,7 +1574,7 @@
       "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.4973370189545676,
+      "duration_s": 0.47635264799464494,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1584,10 +1584,10 @@
         }
       },
       "content": null,
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I have a tool called get_current_weather that can provide this information. I need to call it with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the current weather data.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I have a tool called get_current_weather that can provide this information. I need to call it with the city as \"Dallas\", state as \"TX\", and unit as \"fahrenheit\".\n\nLet me make this call to get the current weather data.",
       "tool_calls": [
         {
-          "id": "c00M0GnR5",
+          "id": "KH3UR9Rtf",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1609,7 +1609,7 @@
       "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.514305037970189,
+      "duration_s": 0.522095452004578,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1634,10 +1634,10 @@
         }
       },
       "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
       "tool_calls": [
         {
-          "id": "Gp44JMad3",
+          "id": "QQXZOTE1G",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1664,7 +1664,7 @@
       "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.5162091290112585,
+      "duration_s": 0.5194753920077346,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1694,10 +1694,10 @@
         }
       },
       "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
       "tool_calls": [
         {
-          "id": "ePVcwW8hn",
+          "id": "eXguLKkAz",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1724,7 +1724,7 @@
       "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.47710277198348194,
+      "duration_s": 0.4775488299783319,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1757,7 +1757,7 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
       "tool_calls": [
         {
-          "id": "rpgWb6yR6",
+          "id": "9uz210HP2",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -1777,7 +1777,7 @@
       "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 1.3073921569739468,
+      "duration_s": 2.258082229993306,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1792,12 +1792,12 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (246 chars)",
+          "actual": "content (403 chars)",
           "passed": true
         }
       },
-      "content": "I'm unable to fetch real-time weather data. However, you can check the current weather in Dallas, Texas on a weather website or app like Weather.com, AccuWeather, or the National Weather Service. Would you like me to help you with something else?",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically in Fahrenheit. To provide this information, I need to fetch the current weather data for Dallas, Texas. Since I don't have real-time web browsing capabilities, I'll need to rely on a weather service or API to get this information. However, since I can't perform web searches or access external APIs directly, I'll need to inform the user that I can't provide real-time weather data.\n\nBut wait, I recall that I have access to some tools that might help with this. Let me check if there's a way to get weather information through one of the available functions. Looking at the tools provided, I see that there's a function called `get_current_weather` which can fetch weather data for a given location.\n\nSo, I can use this function to get the current weather in Dallas, Texas. The function requires a location parameter, which in this case would be \"Dallas, Texas\". The function should return the current weather data, including the temperature in Fahrenheit.\n\nLet me proceed with calling this function.",
+      "content": "I don't have real-time weather data access, but you can check the current weather in Dallas, Texas, in Fahrenheit on a reliable weather service like the [National Weather Service](https://www.weather.gov/) or a weather app. Typically, Dallas in June has temperatures ranging from the 70s to the 90s Fahrenheit, but for the most accurate and up-to-date information, please check a current weather source.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically in Fahrenheit. To provide this information, I need to fetch the current weather data for Dallas, Texas. Since I don't have real-time web browsing capabilities, I'll need to rely on my knowledge cutoff date of November 1, 2024. However, weather conditions can change frequently, so I might not have the most up-to-date information.\n\nBut since the user is asking for the current weather, and I don't have real-time data access, I should clarify that I can't provide real-time weather updates. However, I can give a general idea based on historical data or suggest that the user check a reliable weather service for the most current information.\n\nBut wait, the user might expect me to have real-time data. Since I don't have web browsing capabilities, I can't fetch real-time data. So, I should inform the user that I can't provide real-time weather updates and suggest they check a weather service like the National Weather Service or a weather app for the most current information.\n\nBut perhaps the user expects me to have this information. Maybe I should ask for clarification or provide a general response about the weather in Dallas based on historical data.\n\nAlternatively, I can say that I don't have real-time data and suggest checking a weather service.\n\nBut the user might be expecting a specific answer. Maybe I can provide a general idea of the weather in Dallas in Fahrenheit based on typical conditions for the current date (assuming today is around June 20, 2025).\n\nTypically, in mid-June, Dallas, Texas has warm temperatures, often in the 90s Fahrenheit during the day and 70s at night. But this is a general estimate and not the current weather.\n\nGiven that, I should clarify that I don't have real-time data and suggest checking a weather service.",
       "tool_calls": [],
       "error": null
     },
@@ -1808,7 +1808,7 @@
       "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.8688823190168478,
+      "duration_s": 0.8599011359619908,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1823,12 +1823,12 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (84 chars)",
+          "actual": "content (85 chars)",
           "passed": true
         }
       },
-      "content": "Why do programmers always mix up Halloween and Christmas?\n\nBecause Oct 31 == Dec 25!",
-      "reasoning_content": "Okay, the user wants a short joke about programming. I need to think of something that's funny and relevant to programming. Maybe something about bugs, loops, or syntax errors. Let me recall some common programming jokes.\n\nOne classic is about the programmer who got stuck in the shower because the instructions said: \"Lather, Rinse, Repeat.\" That's a good one because it plays on the idea of an infinite loop.\n\nAnother one is about why programmers confuse Halloween and Christmas: because Oct 31 == Dec 25. That's a play on the fact that in programming, octal 31 is equal to decimal 25.\n\nBut the user asked for a short joke, so maybe the first one is better because it's concise.\n\nLet me go with the shower joke.",
+      "content": "Why do programmers always mix up Halloween and Christmas?\nBecause `Oct 31 == Dec 25`!",
+      "reasoning_content": "Okay, the user wants a short joke about programming. I need to think of something that's both funny and relevant to programming. Maybe something about bugs, loops, or syntax errors. Let me recall a few programming jokes I know.\n\nOne classic is about a programmer's wife asking him to go to the store and get a loaf of bread. If there are eggs, get a dozen. So he comes back with 12 loaves of bread. That's a play on the if statement in programming.\n\nAnother one is about why programmers confuse Halloween and Christmas. Because Oct 31 == Dec 25. That's a play on the octal and decimal representations.\n\nI think the second one is shorter and more to the point. So I'll go with that one.",
       "tool_calls": [],
       "error": null
     },
@@ -1839,7 +1839,7 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.5219468399882317,
+      "duration_s": 0.4958217720268294,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1864,10 +1864,10 @@
         }
       },
       "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call.",
       "tool_calls": [
         {
-          "id": "DAk3TGhYV",
+          "id": "txDsY9sxq",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1889,7 +1889,7 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.37075478199403733,
+      "duration_s": 0.6893774790223688,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1904,7 +1904,7 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (87 chars)",
+          "actual": "content (86 chars)",
           "passed": true
         },
         "finish_reason": {
@@ -1914,12 +1914,12 @@
         },
         "reasoning_present": {
           "expected": "reasoning content present",
-          "actual": "reasoning (284 chars)",
+          "actual": "reasoning (565 chars)",
           "passed": true
         }
       },
-      "content": "Here's one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs!",
-      "reasoning_content": "The user is asking for a short programming joke. This is a straightforward request that doesn't require any tools - I can just provide a joke from my knowledge base. No need to search the web or get weather information. I should keep it short and relevant to programming as requested.",
+      "content": "Why do programmers always mix up Halloween and Christmas?\n\nBecause `Oct 31 == Dec 25`!",
+      "reasoning_content": "The user wants a short programming joke. This is a straightforward request that doesn't require any tools - I can just provide a joke directly from my knowledge base. Let me think of a good, short programming joke.\n\nSome classic programming jokes include:\n- Why do programmers prefer dark mode? Because light attracts bugs.\n- Why do Java developers wear glasses? Because they can't C#.\n- There are 10 types of people in the world: those who understand binary, and those who don't.\n\nI'll go with a simple, well-known one that's appropriate and gets the point across.",
       "tool_calls": [],
       "error": null
     },
@@ -1930,7 +1930,7 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.5133358130115084,
+      "duration_s": 0.4919060009997338,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1940,10 +1940,10 @@
         }
       },
       "content": null,
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I have a tool called get_current_weather that can provide this information. I need to call it with:\n- city: \"Dallas\"\n- state: \"TX\" (the two-letter abbreviation for Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I have a tool called get_current_weather that can provide this information. I need to call it with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the current weather data.",
       "tool_calls": [
         {
-          "id": "C3OQPQspI",
+          "id": "jNGfAoRrW",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1965,7 +1965,7 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.5198485419969074,
+      "duration_s": 0.515777099004481,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1993,7 +1993,7 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
       "tool_calls": [
         {
-          "id": "4zR21zHWC",
+          "id": "KcDEAfknm",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -2020,8 +2020,8 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.49596213101176545,
-      "finish_reason": "stop",
+      "duration_s": 0.5212725650053471,
+      "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
           "expected": "no error",
@@ -2039,8 +2039,8 @@
           "passed": true
         },
         "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
+          "expected": "tool_calls",
+          "actual": "tool_calls",
           "passed": true
         },
         "named_tool_match": {
@@ -2050,10 +2050,10 @@
         }
       },
       "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
       "tool_calls": [
         {
-          "id": "imD6B7izJ",
+          "id": "PknZWxoB5",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -2080,8 +2080,8 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.4537714710459113,
-      "finish_reason": "stop",
+      "duration_s": 0.47416758100735024,
+      "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
           "expected": "no error",
@@ -2099,8 +2099,8 @@
           "passed": true
         },
         "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
+          "expected": "tool_calls",
+          "actual": "tool_calls",
           "passed": true
         },
         "named_tool_match": {
@@ -2110,10 +2110,10 @@
         }
       },
       "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
       "tool_calls": [
         {
-          "id": "jXgcvIUru",
+          "id": "Cb22r7wGL",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -2133,7 +2133,7 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 1.5743864990072325,
+      "duration_s": 0.739386358007323,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -2148,12 +2148,12 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (309 chars)",
+          "actual": "content (281 chars)",
           "passed": true
         }
       },
-      "content": "I don't have real-time access to weather data, so I can't provide the current weather in Dallas, Texas. For the most accurate and up-to-date information, I recommend checking a reliable weather service like [Weather.com](https://weather.com) or a weather app. Would you like me to help you with anything else?",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically in Fahrenheit. To provide this information, I need to fetch the current weather data for Dallas, Texas. Since I don't have real-time access to the internet or weather services, I'll need to rely on my knowledge cutoff date of November 1, 2024. However, weather conditions can change frequently, so the information might not be up-to-date.\n\nBut since the user is asking for the current weather, and I don't have real-time data access, I should clarify that I can't provide real-time weather updates. However, I can give a general idea based on historical data or suggest that the user check a reliable weather service for the most current information.\n\nBut perhaps the user expects me to have real-time data. Since I don't have web browsing capabilities, I can't fetch real-time data. So, I should inform the user that I can't provide real-time weather updates and suggest they check a weather service like Weather.com or a weather app for the most accurate and up-to-date information.\n\nAlternatively, if the user is okay with historical data or a general idea, I can provide that. But since they asked for \"the weather,\" which typically implies current conditions, I should clarify that I can't provide real-time data.",
+      "content": "I don't have real-time data access to provide the current weather in Dallas, Texas. However, you can check the current weather on a weather website or app like Weather.com, AccuWeather, or the National Weather Service. Would you like general climate information for Dallas instead?",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically in Fahrenheit. To provide this information, I need to know the current date and time because weather conditions change frequently. However, since I don't have real-time data access, I can't provide the current weather. But I can guide the user on how to find this information or provide general climate information for Dallas, Texas.\n\nBut first, I should confirm if the user wants the current weather or general climate information.",
       "tool_calls": [],
       "error": null
     },
@@ -2164,7 +2164,7 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.7752236140077002,
+      "duration_s": 1.3150386569905095,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -2179,12 +2179,12 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (66 chars)",
+          "actual": "content (83 chars)",
           "passed": true
         }
       },
-      "content": "Why do programmers prefer dark mode?\n\nBecause light attracts bugs!",
-      "reasoning_content": "Okay, the user wants a short joke about programming. I need to think of something that's funny and relevant to programming. Maybe something about bugs, loops, or syntax errors. Let me recall some common programming jokes.\n\nOne classic is about the programmer who got stuck in the shower because the instructions said: \"Lather, Rinse, Repeat.\" That's a good one because it plays on the idea of an infinite loop.\n\nAnother one is about a programmer who tells his wife she's the only one for him, and she replies, \"What about the other women you dated?\" and he says, \"They were just prototypes.\"\n\nBut the first one seems more universally funny and directly related to programming concepts. So, I'll go with that one.",
+      "content": "Why do programmers always mix up Halloween and Christmas?\nBecause Oct 31 == Dec 25.",
+      "reasoning_content": "I need to come up with a short joke about programming. Programming jokes often play on common terms, concepts, or stereotypes in the field. Let me think of some programming-related terms and concepts that could be used humorously.\n\nOne common joke is about the difference between Java and JavaScript, or about null pointers, or infinite loops. Another angle is to play on the idea of bugs in code.\n\nHere's a classic one:\nWhy do programmers prefer dark mode?\nBecause light attracts bugs.\n\nBut that's more about bugs in general. Let me think of something more directly related to programming.\n\nHow about this one:\nWhy did the programmer quit his job?\nBecause he didn't get arrays.\n\nWait, that doesn't make sense. Maybe:\nWhy did the programmer go broke?\nBecause he used up all his cache.\n\nThat's a play on the term \"cache\" which is both a computer term and sounds like \"cash\".\n\nAlternatively:\nWhy do programmers always mix up Halloween and Christmas?\nBecause Oct 31 == Dec 25.\n\nThat's a play on the fact that in programming, octal 31 is equal to decimal 25.\n\nI think the last one is a good one because it's short and plays on a programming concept (octal vs decimal numbers).",
       "tool_calls": [],
       "error": null
     }

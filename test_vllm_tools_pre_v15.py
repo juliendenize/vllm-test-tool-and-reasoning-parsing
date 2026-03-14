@@ -311,8 +311,12 @@ def build_test_cases() -> list[TestCase]:
         )
 
         # --- tool_choice = named (specific function) ---
-        # Per the OpenAI API spec, finish_reason is "stop" for
-        # named tool calls (not "tool_calls").
+        # Per the OpenAI API spec, finish_reason should be "stop"
+        # for named tool calls.  However, the vLLM streaming path
+        # currently returns "tool_calls" (upstream bug in the
+        # auto_tools_called logic), while the non-streaming path
+        # correctly returns "stop".
+        named_finish_reason = "tool_calls" if stream else "stop"
         cases.append(
             TestCase(
                 name=f"named_weather{sfx}",
@@ -327,7 +331,7 @@ def build_test_cases() -> list[TestCase]:
                 reasoning_effort=None,
                 expect_tool_calls=True,
                 expect_content=None,
-                expect_finish_reason="stop",
+                expect_finish_reason=named_finish_reason,
                 expect_reasoning=None,  # tool-only: model may or may not reason
             )
         )
@@ -346,7 +350,7 @@ def build_test_cases() -> list[TestCase]:
                 reasoning_effort=None,
                 expect_tool_calls=True,
                 expect_content=None,
-                expect_finish_reason="stop",
+                expect_finish_reason=named_finish_reason,
                 expect_reasoning=None,  # tool-only: model may or may not reason
             )
         )

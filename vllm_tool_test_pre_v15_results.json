@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp": "2026-03-14T18:39:14.495006+00:00",
+    "timestamp": "2026-03-14T23:02:51.758689+00:00",
     "model": "mistralai/Ministral-3-8B-Reasoning-2512",
     "base_url": "http://localhost:8000/v1",
     "total_tests": 16,
@@ -16,7 +16,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.45446567004546523,
+      "duration_s": 1.5054332180297934,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -41,10 +41,10 @@
         }
       },
       "content": null,
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically the temperature in Fahrenheit. I need to use the `get_current_weather` function to get this information. I'll need to specify the city as \"Dallas\" and the state as \"TX\" (the two-letter abbreviation for Texas). The unit should be set to \"fahrenheit\" as requested by the user.\n\nI'll proceed to call the function with these parameters.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically the temperature in Fahrenheit. I need to use the `get_current_weather` function to get this information. I'll need to provide the city name and the state abbreviation. Dallas is in Texas, and the state abbreviation for Texas is \"TX\". The unit should be set to \"fahrenheit\" as requested by the user.\n\nI'll call the function with these parameters:\n- city: \"Dallas\"\n- state: \"TX\"\n- unit: \"fahrenheit\"\n\nOnce I get the response, I'll format it in a way that's easy for the user to understand.",
       "tool_calls": [
         {
-          "id": "K2SKhTjOT",
+          "id": "1owYcMxHh",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -66,7 +66,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.9738355230074376,
+      "duration_s": 0.9795937170274556,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -107,7 +107,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.6386955289635807,
+      "duration_s": 0.6412877349648625,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -128,7 +128,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.44289750198367983,
+      "duration_s": 0.4452491319971159,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -156,7 +156,7 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically the temperature in Fahrenheit. I need to use the `get_current_weather` function to get this information. I'll need to specify the city as \"Dallas\" and the state as \"TX\" (the two-letter abbreviation for Texas). The unit should be set to \"fahrenheit\" as requested by the user.\n\nI'll proceed to call the function with these parameters.",
       "tool_calls": [
         {
-          "id": "XBvBAqkKH",
+          "id": "r1QD0wb41",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -183,7 +183,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.4423527409671806,
+      "duration_s": 0.4425894810119644,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -216,7 +216,7 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically the temperature in Fahrenheit. I need to use the `get_current_weather` function to get this information. I'll need to specify the city as \"Dallas\" and the state as \"TX\" (the two-letter abbreviation for Texas). The unit should be set to \"fahrenheit\" as requested by the user.\n\nI'll proceed to call the function with these parameters.",
       "tool_calls": [
         {
-          "id": "nTcfjDH2f",
+          "id": "LDIB196gE",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -243,7 +243,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.42120927496580407,
+      "duration_s": 0.42164722096640617,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -276,7 +276,7 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically the temperature in Fahrenheit. I need to use the `get_current_weather` function to get this information. I'll need to specify the city as \"Dallas\" and the state as \"TX\" (the two-letter abbreviation for Texas). The unit should be set to \"fahrenheit\" as requested by the user.\n\nI'll proceed to call the function with these parameters.",
       "tool_calls": [
         {
-          "id": "d0TLs1GZb",
+          "id": "0bdViy78T",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -296,7 +296,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 2.664257284021005,
+      "duration_s": 2.6649040959891863,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -327,7 +327,7 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 1.0085392250330187,
+      "duration_s": 1.0146329900017008,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -358,7 +358,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.44520722498418763,
+      "duration_s": 0.44985165301477537,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -386,7 +386,7 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically the temperature in Fahrenheit. I need to use the `get_current_weather` function to get this information. I'll need to specify the city as \"Dallas\" and the state as \"TX\" (the two-letter abbreviation for Texas). The unit should be set to \"fahrenheit\" as requested by the user.\n\nI'll proceed to call the function with these parameters.",
       "tool_calls": [
         {
-          "id": "d7PJwEADS",
+          "id": "zabA5XSJs",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -408,7 +408,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.9749912850093096,
+      "duration_s": 0.9767988280509599,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -449,7 +449,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.7863794649601914,
+      "duration_s": 0.7901200269698165,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -470,7 +470,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.4433595050359145,
+      "duration_s": 0.4450561039848253,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -498,7 +498,7 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically the temperature in Fahrenheit. I need to use the `get_current_weather` function to get this information. I'll need to specify the city as \"Dallas\" and the state as \"TX\" (the two-letter abbreviation for Texas). The unit should be set to \"fahrenheit\" as requested by the user.\n\nI'll proceed to call the function with these parameters.",
       "tool_calls": [
         {
-          "id": "U1MtXDv7s",
+          "id": "O9dyXsZ3L",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -525,8 +525,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.4432864160044119,
-      "finish_reason": "stop",
+      "duration_s": 0.4432871710159816,
+      "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
           "expected": "no error",
@@ -544,8 +544,8 @@
           "passed": true
         },
         "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
+          "expected": "tool_calls",
+          "actual": "tool_calls",
           "passed": true
         },
         "named_tool_match": {
@@ -558,7 +558,7 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically the temperature in Fahrenheit. I need to use the `get_current_weather` function to get this information. I'll need to specify the city as \"Dallas\" and the state as \"TX\" (the two-letter abbreviation for Texas). The unit should be set to \"fahrenheit\" as requested by the user.\n\nI'll proceed to call the function with these parameters.",
       "tool_calls": [
         {
-          "id": "yf3Wx1Ktd",
+          "id": "c0vqxzWMg",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -585,8 +585,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.42175527598010376,
-      "finish_reason": "stop",
+      "duration_s": 0.4215753310127184,
+      "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
           "expected": "no error",
@@ -604,8 +604,8 @@
           "passed": true
         },
         "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
+          "expected": "tool_calls",
+          "actual": "tool_calls",
           "passed": true
         },
         "named_tool_match": {
@@ -618,7 +618,7 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically the temperature in Fahrenheit. I need to use the `get_current_weather` function to get this information. I'll need to specify the city as \"Dallas\" and the state as \"TX\" (the two-letter abbreviation for Texas). The unit should be set to \"fahrenheit\" as requested by the user.\n\nI'll proceed to call the function with these parameters.",
       "tool_calls": [
         {
-          "id": "ShuGa9OqA",
+          "id": "WW15NdyEA",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -638,7 +638,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 6.864569908007979,
+      "duration_s": 6.8704737210064195,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -669,7 +669,7 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 1.0742011180263944,
+      "duration_s": 1.0749706079950556,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
