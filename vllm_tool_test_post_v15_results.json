@@ -1,0 +1,2192 @@
+{
+  "metadata": {
+    "timestamp": "2026-03-14T21:41:39.987191+00:00",
+    "model": "mistralai/Secret",
+    "base_url": "http://localhost:8000/v1",
+    "total_tests": 48,
+    "passed": 48,
+    "failed": 0
+  },
+  "results": [
+    {
+      "name": "auto_with_tool_prompt (non-stream, re=None)",
+      "description": "tool_choice=auto, prompt wants weather (non-stream, re=None)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 1.3819330069818534,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "j95y80ix2",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "auto_no_tool_prompt (non-stream, re=None)",
+      "description": "tool_choice=auto, prompt wants joke (non-stream, re=None)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.07676554698264226,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (66 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        }
+      },
+      "content": "Why do programmers prefer dark mode?\n\nBecause light attracts bugs!",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_tool_result (non-stream, re=None)",
+      "description": "tool_choice=auto, tool result follow-up (non-stream, re=None)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.14543527702335268,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (99 chars)",
+          "passed": true
+        }
+      },
+      "content": "The current weather in Dallas, Texas is **98\u00b0F** with partly cloudy skies and a low chance of rain.",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "required_tool_prompt (non-stream, re=None)",
+      "description": "tool_choice=required, prompt wants weather (non-stream, re=None)",
+      "tool_choice": "required",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.1367204409907572,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "Q8b6ZJLht",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_weather (non-stream, re=None)",
+      "description": "tool_choice=get_current_weather (named) (non-stream, re=None)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "get_current_weather"
+        }
+      },
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.13621621002675965,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'get_current_weather'",
+          "actual": "function name = 'get_current_weather'",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "kkqRL1Bu5",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_search_wrong_prompt (non-stream, re=None)",
+      "description": "tool_choice=web_search (named), weather prompt (non-stream, re=None)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "web_search"
+        }
+      },
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.08013546402798966,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='web_search', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'web_search'",
+          "actual": "function name = 'web_search'",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "LUoJnMyWH",
+          "type": "function",
+          "function": {
+            "name": "web_search",
+            "arguments": "{\"search_term\": \"current weather Dallas Texas\"}",
+            "arguments_parsed": {
+              "search_term": "current weather Dallas Texas"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "none_tool_prompt (non-stream, re=None)",
+      "description": "tool_choice=none, prompt wants weather (non-stream, re=None)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 1.2419986550230533,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (927 chars)",
+          "passed": true
+        }
+      },
+      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- **[Weather.com (The Weather Channel)](https://weather.com/weather/today/l/Dallas+TX)**\n- **[AccuWeather](https://www.accuweather.com/en/us/dallas/75201/weather-forecast/331154)**\n- **[National Weather Service (NWS)](https://www.weather.gov/fwd/)**\n\n### **Current Weather (Example - Check for Real-Time Data)**\n*(Note: Weather changes frequently, so for the most accurate and up-to-date temperature, humidity, and conditions, visit one of the links above.)*\n\nAs of my last update, Dallas typically has:\n- **Summer (June\u2013August):** Highs around **95\u2013105\u00b0F**, lows around **75\u201380\u00b0F**\n- **Winter (December\u2013February):** Highs around **50\u201360\u00b0F**, lows around **30\u201340\u00b0F**\n- **Spring/Fall:** Mild temperatures, often **70\u201385\u00b0F** during the day.\n\nWould you like a **5-day forecast** or historical averages? Let me know!",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "none_no_tool_prompt (non-stream, re=None)",
+      "description": "tool_choice=none, prompt wants joke (non-stream, re=None)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.14181002299301326,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (98 chars)",
+          "passed": true
+        }
+      },
+      "content": "Here's a short one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_with_tool_prompt (stream, re=None)",
+      "description": "tool_choice=auto, prompt wants weather (stream, re=None)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.141105193994008,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "nVSpBgtda",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "auto_no_tool_prompt (stream, re=None)",
+      "description": "tool_choice=auto, prompt wants joke (stream, re=None)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.07438584300689399,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (66 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        }
+      },
+      "content": "Why do programmers prefer dark mode?\n\nBecause light attracts bugs!",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_tool_result (stream, re=None)",
+      "description": "tool_choice=auto, tool result follow-up (stream, re=None)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.13881943898741156,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (99 chars)",
+          "passed": true
+        }
+      },
+      "content": "The current weather in Dallas, Texas is **98\u00b0F** with partly cloudy skies and a low chance of rain.",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "required_tool_prompt (stream, re=None)",
+      "description": "tool_choice=required, prompt wants weather (stream, re=None)",
+      "tool_choice": "required",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.13604609202593565,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "TDcrD2xW7",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_weather (stream, re=None)",
+      "description": "tool_choice=get_current_weather (named) (stream, re=None)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "get_current_weather"
+        }
+      },
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.13601330196252093,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'get_current_weather'",
+          "actual": "function name = 'get_current_weather'",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "rIGnBCU7w",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_search_wrong_prompt (stream, re=None)",
+      "description": "tool_choice=web_search (named), weather prompt (stream, re=None)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "web_search"
+        }
+      },
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.08027673198375851,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='web_search', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'web_search'",
+          "actual": "function name = 'web_search'",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "GSz4IeLoR",
+          "type": "function",
+          "function": {
+            "name": "web_search",
+            "arguments": "{\"search_term\": \"current weather Dallas Texas\"}",
+            "arguments_parsed": {
+              "search_term": "current weather Dallas Texas"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "none_tool_prompt (stream, re=None)",
+      "description": "tool_choice=none, prompt wants weather (stream, re=None)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.5821606519748457,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (522 chars)",
+          "passed": true
+        }
+      },
+      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- [Weather.com (The Weather Channel)](https://weather.com)\n- [AccuWeather](https://www.accuweather.com)\n- [National Weather Service (NWS)](https://www.weather.gov)\n\nAs of my last update, I don\u2019t have real-time data, but you can quickly find the current temperature, conditions, and forecast for Dallas by visiting any of these sites.\n\nWould you like me to help you interpret the weather data once you check?",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "none_no_tool_prompt (stream, re=None)",
+      "description": "tool_choice=none, prompt wants joke (stream, re=None)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "duration_s": 0.1395951670128852,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (98 chars)",
+          "passed": true
+        }
+      },
+      "content": "Here's a short one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_with_tool_prompt (non-stream, re=none)",
+      "description": "tool_choice=auto, prompt wants weather (non-stream, re=none)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.13594288396416232,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "ur8RiFie0",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "auto_no_tool_prompt (non-stream, re=none)",
+      "description": "tool_choice=auto, prompt wants joke (non-stream, re=none)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.0731539319967851,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (66 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": "Why do programmers prefer dark mode?\n\nBecause light attracts bugs!",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_tool_result (non-stream, re=none)",
+      "description": "tool_choice=auto, tool result follow-up (non-stream, re=none)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.13875762996030971,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (99 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": "The current weather in Dallas, Texas is **98\u00b0F** with partly cloudy skies and a low chance of rain.",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "required_tool_prompt (non-stream, re=none)",
+      "description": "tool_choice=required, prompt wants weather (non-stream, re=none)",
+      "tool_choice": "required",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.13539776200195774,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "IdKBHjbGz",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_weather (non-stream, re=none)",
+      "description": "tool_choice=get_current_weather (named) (non-stream, re=none)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "get_current_weather"
+        }
+      },
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.13543650100473315,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'get_current_weather'",
+          "actual": "function name = 'get_current_weather'",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "pEdEJKNHO",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_search_wrong_prompt (non-stream, re=none)",
+      "description": "tool_choice=web_search (named), weather prompt (non-stream, re=none)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "web_search"
+        }
+      },
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.07980372896417975,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='web_search', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'web_search'",
+          "actual": "function name = 'web_search'",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "hwM4XAwKt",
+          "type": "function",
+          "function": {
+            "name": "web_search",
+            "arguments": "{\"search_term\": \"current weather Dallas Texas\"}",
+            "arguments_parsed": {
+              "search_term": "current weather Dallas Texas"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "none_tool_prompt (non-stream, re=none)",
+      "description": "tool_choice=none, prompt wants weather (non-stream, re=none)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.5814626420033164,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (522 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- [Weather.com (The Weather Channel)](https://weather.com)\n- [AccuWeather](https://www.accuweather.com)\n- [National Weather Service (NWS)](https://www.weather.gov)\n\nAs of my last update, I don\u2019t have real-time data, but you can quickly find the current temperature, conditions, and forecast for Dallas by visiting one of these sites.\n\nWould you like me to help you interpret the weather data once you check?",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "none_no_tool_prompt (non-stream, re=none)",
+      "description": "tool_choice=none, prompt wants joke (non-stream, re=none)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.14842831197893247,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (101 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": "Here's a short one for you:\n\n**Why do programmers prefer dark mode?**\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_with_tool_prompt (stream, re=none)",
+      "description": "tool_choice=auto, prompt wants weather (stream, re=none)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.1352582440013066,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "gqESI89bI",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "auto_no_tool_prompt (stream, re=none)",
+      "description": "tool_choice=auto, prompt wants joke (stream, re=none)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.07541401800699532,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (66 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": "Why do programmers prefer dark mode?\n\nBecause light attracts bugs!",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_tool_result (stream, re=none)",
+      "description": "tool_choice=auto, tool result follow-up (stream, re=none)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.1393278610194102,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (99 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": "The current weather in Dallas, Texas is **98\u00b0F** with partly cloudy skies and a low chance of rain.",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "required_tool_prompt (stream, re=none)",
+      "description": "tool_choice=required, prompt wants weather (stream, re=none)",
+      "tool_choice": "required",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.13573231705231592,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "QBuTYWH9y",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_weather (stream, re=none)",
+      "description": "tool_choice=get_current_weather (named) (stream, re=none)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "get_current_weather"
+        }
+      },
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.13581466500181705,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'get_current_weather'",
+          "actual": "function name = 'get_current_weather'",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "F8uExjjTe",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_search_wrong_prompt (stream, re=none)",
+      "description": "tool_choice=web_search (named), weather prompt (stream, re=none)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "web_search"
+        }
+      },
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.0802639210014604,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='web_search', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'web_search'",
+          "actual": "function name = 'web_search'",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "xH4GoUFWH",
+          "type": "function",
+          "function": {
+            "name": "web_search",
+            "arguments": "{\"search_term\": \"current weather Dallas Texas\"}",
+            "arguments_parsed": {
+              "search_term": "current weather Dallas Texas"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "none_tool_prompt (stream, re=none)",
+      "description": "tool_choice=none, prompt wants weather (stream, re=none)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 1.5190106030204333,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (1113 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- **[Weather.com (The Weather Channel)](https://weather.com/weather/today/l/Dallas+TX)**\n- **[AccuWeather](https://www.accuweather.com/en/us/dallas/75201/weather-forecast/347621)**\n- **[National Weather Service (NWS)](https://www.weather.gov/fwd/)**\n\n### **Quick Check (Example Data - May 2024)**\n*(For the most accurate and up-to-date info, visit one of the links above.)*\n\n| **Time**       | **Temperature (\u00b0F)** | **Conditions**       |\n|----------------|----------------------|----------------------|\n| **Now**        | ~75\u201385\u00b0F (varies)    | Sunny/Partly Cloudy  |\n| **Today High** | ~88\u201392\u00b0F             | Mostly Sunny         |\n| **Tonight Low**| ~68\u201372\u00b0F             | Clear Skies          |\n\n### **Key Notes:**\n- **Summer (June\u2013August):** Often **90\u2013100\u00b0F+** with high humidity.\n- **Winter (December\u2013February):** Typically **40\u201360\u00b0F**, but can drop below freezing.\n- **Spring/Fall:** Mild, ranging from **60\u201385\u00b0F**.\n\nWould you like a **5-day forecast** or historical averages? Let me know!",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "none_no_tool_prompt (stream, re=none)",
+      "description": "tool_choice=none, prompt wants joke (stream, re=none)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "duration_s": 0.15010328497737646,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (101 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": "Here's a short one for you:\n\n**Why do programmers prefer dark mode?**\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_with_tool_prompt (non-stream, re=high)",
+      "description": "tool_choice=auto, prompt wants weather (non-stream, re=high)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.5248070660163648,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
+      "tool_calls": [
+        {
+          "id": "Husqodz1Q",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "auto_no_tool_prompt (non-stream, re=high)",
+      "description": "tool_choice=auto, prompt wants joke (non-stream, re=high)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.31940440397011116,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (87 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (230 chars)",
+          "passed": true
+        }
+      },
+      "content": "Here's one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs!",
+      "reasoning_content": "The user is asking for a short programming joke. This is a straightforward request that doesn't require any tools - I can just provide a joke from my knowledge base. I should keep it short and relevant to programming as requested.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_tool_result (non-stream, re=high)",
+      "description": "tool_choice=auto, tool result follow-up (non-stream, re=high)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.4973370189545676,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I have a tool called get_current_weather that can provide this information. I need to call it with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the current weather data.",
+      "tool_calls": [
+        {
+          "id": "c00M0GnR5",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "required_tool_prompt (non-stream, re=high)",
+      "description": "tool_choice=required, prompt wants weather (non-stream, re=high)",
+      "tool_choice": "required",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.514305037970189,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
+      "tool_calls": [
+        {
+          "id": "Gp44JMad3",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_weather (non-stream, re=high)",
+      "description": "tool_choice=get_current_weather (named) (non-stream, re=high)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "get_current_weather"
+        }
+      },
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.5162091290112585,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'get_current_weather'",
+          "actual": "function name = 'get_current_weather'",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
+      "tool_calls": [
+        {
+          "id": "ePVcwW8hn",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_search_wrong_prompt (non-stream, re=high)",
+      "description": "tool_choice=web_search (named), weather prompt (non-stream, re=high)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "web_search"
+        }
+      },
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.47710277198348194,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='web_search', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'web_search'",
+          "actual": "function name = 'web_search'",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
+      "tool_calls": [
+        {
+          "id": "rpgWb6yR6",
+          "type": "function",
+          "function": {
+            "name": "web_search",
+            "arguments": "{\"search_term\": \"current weather Dallas Texas Fahrenheit\"}",
+            "arguments_parsed": {
+              "search_term": "current weather Dallas Texas Fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "none_tool_prompt (non-stream, re=high)",
+      "description": "tool_choice=none, prompt wants weather (non-stream, re=high)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 1.3073921569739468,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (246 chars)",
+          "passed": true
+        }
+      },
+      "content": "I'm unable to fetch real-time weather data. However, you can check the current weather in Dallas, Texas on a weather website or app like Weather.com, AccuWeather, or the National Weather Service. Would you like me to help you with something else?",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically in Fahrenheit. To provide this information, I need to fetch the current weather data for Dallas, Texas. Since I don't have real-time web browsing capabilities, I'll need to rely on a weather service or API to get this information. However, since I can't perform web searches or access external APIs directly, I'll need to inform the user that I can't provide real-time weather data.\n\nBut wait, I recall that I have access to some tools that might help with this. Let me check if there's a way to get weather information through one of the available functions. Looking at the tools provided, I see that there's a function called `get_current_weather` which can fetch weather data for a given location.\n\nSo, I can use this function to get the current weather in Dallas, Texas. The function requires a location parameter, which in this case would be \"Dallas, Texas\". The function should return the current weather data, including the temperature in Fahrenheit.\n\nLet me proceed with calling this function.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "none_no_tool_prompt (non-stream, re=high)",
+      "description": "tool_choice=none, prompt wants joke (non-stream, re=high)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.8688823190168478,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (84 chars)",
+          "passed": true
+        }
+      },
+      "content": "Why do programmers always mix up Halloween and Christmas?\n\nBecause Oct 31 == Dec 25!",
+      "reasoning_content": "Okay, the user wants a short joke about programming. I need to think of something that's funny and relevant to programming. Maybe something about bugs, loops, or syntax errors. Let me recall some common programming jokes.\n\nOne classic is about the programmer who got stuck in the shower because the instructions said: \"Lather, Rinse, Repeat.\" That's a good one because it plays on the idea of an infinite loop.\n\nAnother one is about why programmers confuse Halloween and Christmas: because Oct 31 == Dec 25. That's a play on the fact that in programming, octal 31 is equal to decimal 25.\n\nBut the user asked for a short joke, so maybe the first one is better because it's concise.\n\nLet me go with the shower joke.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_with_tool_prompt (stream, re=high)",
+      "description": "tool_choice=auto, prompt wants weather (stream, re=high)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.5219468399882317,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
+      "tool_calls": [
+        {
+          "id": "DAk3TGhYV",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "auto_no_tool_prompt (stream, re=high)",
+      "description": "tool_choice=auto, prompt wants joke (stream, re=high)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.37075478199403733,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (87 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (284 chars)",
+          "passed": true
+        }
+      },
+      "content": "Here's one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs!",
+      "reasoning_content": "The user is asking for a short programming joke. This is a straightforward request that doesn't require any tools - I can just provide a joke from my knowledge base. No need to search the web or get weather information. I should keep it short and relevant to programming as requested.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_tool_result (stream, re=high)",
+      "description": "tool_choice=auto, tool result follow-up (stream, re=high)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.5133358130115084,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I have a tool called get_current_weather that can provide this information. I need to call it with:\n- city: \"Dallas\"\n- state: \"TX\" (the two-letter abbreviation for Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
+      "tool_calls": [
+        {
+          "id": "C3OQPQspI",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "required_tool_prompt (stream, re=high)",
+      "description": "tool_choice=required, prompt wants weather (stream, re=high)",
+      "tool_choice": "required",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.5198485419969074,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
+      "tool_calls": [
+        {
+          "id": "4zR21zHWC",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_weather (stream, re=high)",
+      "description": "tool_choice=get_current_weather (named) (stream, re=high)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "get_current_weather"
+        }
+      },
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.49596213101176545,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'get_current_weather'",
+          "actual": "function name = 'get_current_weather'",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call.",
+      "tool_calls": [
+        {
+          "id": "imD6B7izJ",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_search_wrong_prompt (stream, re=high)",
+      "description": "tool_choice=web_search (named), weather prompt (stream, re=high)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "web_search"
+        }
+      },
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.4537714710459113,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='web_search', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'web_search'",
+          "actual": "function name = 'web_search'",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call.",
+      "tool_calls": [
+        {
+          "id": "jXgcvIUru",
+          "type": "function",
+          "function": {
+            "name": "web_search",
+            "arguments": "{\"search_term\": \"current weather Dallas Texas Fahrenheit\"}",
+            "arguments_parsed": {
+              "search_term": "current weather Dallas Texas Fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "none_tool_prompt (stream, re=high)",
+      "description": "tool_choice=none, prompt wants weather (stream, re=high)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 1.5743864990072325,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (309 chars)",
+          "passed": true
+        }
+      },
+      "content": "I don't have real-time access to weather data, so I can't provide the current weather in Dallas, Texas. For the most accurate and up-to-date information, I recommend checking a reliable weather service like [Weather.com](https://weather.com) or a weather app. Would you like me to help you with anything else?",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically in Fahrenheit. To provide this information, I need to fetch the current weather data for Dallas, Texas. Since I don't have real-time access to the internet or weather services, I'll need to rely on my knowledge cutoff date of November 1, 2024. However, weather conditions can change frequently, so the information might not be up-to-date.\n\nBut since the user is asking for the current weather, and I don't have real-time data access, I should clarify that I can't provide real-time weather updates. However, I can give a general idea based on historical data or suggest that the user check a reliable weather service for the most current information.\n\nBut perhaps the user expects me to have real-time data. Since I don't have web browsing capabilities, I can't fetch real-time data. So, I should inform the user that I can't provide real-time weather updates and suggest they check a weather service like Weather.com or a weather app for the most accurate and up-to-date information.\n\nAlternatively, if the user is okay with historical data or a general idea, I can provide that. But since they asked for \"the weather,\" which typically implies current conditions, I should clarify that I can't provide real-time data.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "none_no_tool_prompt (stream, re=high)",
+      "description": "tool_choice=none, prompt wants joke (stream, re=high)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "duration_s": 0.7752236140077002,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (66 chars)",
+          "passed": true
+        }
+      },
+      "content": "Why do programmers prefer dark mode?\n\nBecause light attracts bugs!",
+      "reasoning_content": "Okay, the user wants a short joke about programming. I need to think of something that's funny and relevant to programming. Maybe something about bugs, loops, or syntax errors. Let me recall some common programming jokes.\n\nOne classic is about the programmer who got stuck in the shower because the instructions said: \"Lather, Rinse, Repeat.\" That's a good one because it plays on the idea of an infinite loop.\n\nAnother one is about a programmer who tells his wife she's the only one for him, and she replies, \"What about the other women you dated?\" and he says, \"They were just prototypes.\"\n\nBut the first one seems more universally funny and directly related to programming concepts. So, I'll go with that one.",
+      "tool_calls": [],
+      "error": null
+    }
+  ]
+}
