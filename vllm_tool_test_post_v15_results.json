@@ -1,11 +1,12 @@
 {
   "metadata": {
-    "timestamp": "2026-03-14T22:57:13.282129+00:00",
-    "model": "mistralai/v15",
-    "base_url": "http://localhost:8000/v1",
-    "total_tests": 48,
-    "passed": 48,
-    "failed": 0
+    "timestamp": "2026-04-08T08:56:03.187452+00:00",
+    "model": "mistralai/Mistral-Small-4-119B-2603",
+    "base_url": "http://h200-bar-196-133:8000/v1",
+    "total_tests": 102,
+    "passed": 90,
+    "failed": 12,
+    "warned": 4
   },
   "results": [
     {
@@ -15,7 +16,8 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 1.0514363439870067,
+      "warnings": 0,
+      "duration_s": 3.933137291111052,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -43,7 +45,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "g87woy2iV",
+          "id": "UXzCUEsKn",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -65,7 +67,8 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.07506906898925081,
+      "warnings": 0,
+      "duration_s": 0.06979482620954514,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -101,7 +104,8 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.1441164799616672,
+      "warnings": 0,
+      "duration_s": 0.1287906188517809,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -132,7 +136,8 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.13554618897615,
+      "warnings": 0,
+      "duration_s": 0.12797647807747126,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -160,7 +165,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "cNo1w3ApN",
+          "id": "p1jHBaMYn",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -187,7 +192,8 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.13544336101040244,
+      "warnings": 0,
+      "duration_s": 0.12593221990391612,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -220,7 +226,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "qzD1vIAkC",
+          "id": "UmeVtb2pg",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -247,7 +253,8 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.07995830400614068,
+      "warnings": 0,
+      "duration_s": 0.07474933285266161,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -280,7 +287,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "1ZtVBFekZ",
+          "id": "BjiTmrxoi",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -300,7 +307,8 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.5840674209757708,
+      "warnings": 0,
+      "duration_s": 1.3536831331439316,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -315,11 +323,11 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (522 chars)",
+          "actual": "content (1399 chars)",
           "passed": true
         }
       },
-      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- [Weather.com (The Weather Channel)](https://weather.com)\n- [AccuWeather](https://www.accuweather.com)\n- [National Weather Service (NWS)](https://www.weather.gov)\n\nAs of my last update, I don\u2019t have real-time data, but you can quickly find the current temperature, conditions, and forecast for Dallas by visiting any of these sites.\n\nWould you like me to help you interpret the weather data once you check?",
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit. Let me check that for you. \ud83c\udf24\ufe0f\nI'll use the weather tool to fetch the current conditions. I'll use the city \"Dallas\" and state \"TX\" with the unit set to \"fahrenheit\". This should give me the current temperature and weather conditions in Dallas. I'll make sure to use the correct parameters to get the most accurate and up-to-date information. I'll proceed with calling the function now. I'll use the weather tool to fetch the current conditions. I'll use the city \"Dallas\" and state \"TX\" with the unit set to \"fahrenheit\". This should give me the current temperature and weather conditions in Dallas. I'll make sure to use the correct parameters to get the most accurate and up-to-date information. I'll proceed with calling the function now. I'll use the weather tool to fetch the current conditions. I'll use the city \"Dallas\" and state \"TX\" with the unit set to \"fahrenheit\". This should give me the current temperature and weather conditions in Dallas. I'll make sure to use the correct parameters to get the most accurate and up-to-date information. I'll proceed with calling the function now.  I'll use the weather tool to fetch the current conditions. I'll use the city \"Dallas\" and state \"TX\" with the unit set to \"fahrenheit\". This should give me the current temperature and weather conditions in Dallas. I'll make sure to",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -331,7 +339,8 @@
       "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.1508512559812516,
+      "warnings": 0,
+      "duration_s": 0.06736785313114524,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -346,23 +355,24 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (101 chars)",
+          "actual": "content (66 chars)",
           "passed": true
         }
       },
-      "content": "Here's a short one for you:\n\n**Why do programmers prefer dark mode?**\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "content": "Why do programmers prefer dark mode?\n\nBecause light attracts bugs!",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
     },
     {
-      "name": "auto_with_tool_prompt (stream, re=None)",
-      "description": "tool_choice=auto, prompt wants weather (stream, re=None)",
+      "name": "json_rf_auto_tool_prompt (non-stream, re=None)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for tool (non-stream, re=None)",
       "tool_choice": "auto",
-      "stream": true,
+      "stream": false,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.1408187499619089,
+      "warnings": 0,
+      "duration_s": 0.12895394815132022,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -390,7 +400,392 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "MswylvYbS",
+          "id": "Vdp0VAGYH",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_auto_json_prompt (non-stream, re=None)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for JSON (non-stream, re=None)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 0.21282325219362974,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (158 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_required_tool_prompt (non-stream, re=None)",
+      "description": "response_format=json_schema, tool_choice=required, user asks for tool (non-stream, re=None)",
+      "tool_choice": "required",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.1275395229458809,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "cONsOAGXW",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_tool_prompt (non-stream, re=None)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for tool (forced JSON) (non-stream, re=None)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.7516058338806033,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (367 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n{\n  \"setup\": \"I will now call the get_current_weather tool to retrieve the current weather in Dallas, Texas in Fahrenheit.\",\n  \"punchline\": \"Calling tool...\",\n  \"tool_calls\": [\n    {\n      \"type\": \"tool_call\",\n      \"name\": \"get_current_weather\",\n      \"parameters\": {\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"unit\": \"fahrenheit\"\n      }\n    }\n  ]\n}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call the tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_json_prompt (non-stream, re=None)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for JSON (non-stream, re=None)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.19285861821845174,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (146 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_tool_prompt (non-stream, re=None)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for tool (non-stream, re=None)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.12427649786695838,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "6WtI71cUT",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_json_prompt (non-stream, re=None)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for JSON (non-stream, re=None)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 0.21333781583234668,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (157 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always mix up Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_tool_prompt (non-stream, re=None)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for tool (forced JSON) (non-stream, re=None)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.7596956365741789,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (369 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n{\n  \"setup\": \"I will now use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit.\",\n  \"punchline\": \"Calling the tool...\",\n  \"tool_calls\": [\n    {\n      \"type\": \"tool_call\",\n      \"name\": \"get_current_weather\",\n      \"parameters\": {\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"unit\": \"fahrenheit\"\n      }\n    }\n  ]\n}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_json_prompt (non-stream, re=None)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for JSON (non-stream, re=None)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.1928444979712367,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (146 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_with_tool_prompt (stream, re=None)",
+      "description": "tool_choice=auto, prompt wants weather (stream, re=None)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.13368919724598527,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "6Xa6TDZDo",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -412,7 +807,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.07470917399041355,
+      "warnings": 0,
+      "duration_s": 0.06651210179552436,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -448,7 +844,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.13943370000924915,
+      "warnings": 0,
+      "duration_s": 0.12565660290420055,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -479,7 +876,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.13604470196878538,
+      "warnings": 0,
+      "duration_s": 0.12457791483029723,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -507,7 +905,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "oJM1NbWOu",
+          "id": "l3odFmOoa",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -534,7 +932,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.13629990798654035,
+      "warnings": 0,
+      "duration_s": 0.12448425590991974,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -567,7 +966,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "n0JFjGtW0",
+          "id": "8OnG0XG20",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -594,7 +993,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.08102618699194863,
+      "warnings": 0,
+      "duration_s": 0.07359995599836111,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -627,7 +1027,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "X3sXy7d3y",
+          "id": "eTdxemZof",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -647,7 +1047,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.9524118110421114,
+      "warnings": 0,
+      "duration_s": 0.7970906128175557,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -662,11 +1063,11 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (738 chars)",
+          "actual": "content (734 chars)",
           "passed": true
         }
       },
-      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- **[Weather.com (The Weather Channel)](https://weather.com/weather/today/l/Dallas+TX)**\n- **[AccuWeather](https://www.accuweather.com/en/us/dallas/75201/weather-forecast/351196)**\n- **[National Weather Service (NWS)](https://www.weather.gov/fwd/)**\n\n### **Current Weather (Example - Check for Updates)**\n*(Note: Weather changes frequently, so verify with a live source.)*\n\n- **Temperature:** ~75\u201390\u00b0F (varies by season)\n- **Conditions:** Sunny, partly cloudy, or rainy (depending on the day)\n- **Humidity:** Often high in summer\n\nWould you like a **5-day forecast** or specific details (e.g., humidity, wind)? Let me know!",
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit. Since Dallas is in Texas, I'll use the state abbreviation \"TX\". I'll use the weather function to fetch this information. I'll set the unit to \"fahrenheit\" as you requested. Let me do that now. I'll use the get_current_weather function to fetch the weather for Dallas, Texas in Fahrenheit. I'll set the city to \"Dallas\" and the state to \"TX\", and the unit to \"fahrenheit\". Let me do that now. I'll use the get_current_weather function to fetch the weather for Dallas, Texas in Fahrenheit. I'll set the city to \"Dallas\" and the state to \"TX\", and the unit to \"fahrenheit\". Let me do that now. I'll use the get_current_weather function to fetch the weather for Dallas,",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -678,7 +1079,8 @@
       "stream": true,
       "reasoning_effort": null,
       "passed": true,
-      "duration_s": 0.14920857100514695,
+      "warnings": 0,
+      "duration_s": 0.06614136602729559,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -693,11 +1095,396 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (101 chars)",
+          "actual": "content (66 chars)",
           "passed": true
         }
       },
-      "content": "Here's a short one for you:\n\n**Why do programmers prefer dark mode?**\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "content": "Why do programmers prefer dark mode?\n\nBecause light attracts bugs!",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_auto_tool_prompt (stream, re=None)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for tool (stream, re=None)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.12537525687366724,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "QBfs3fnWD",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_auto_json_prompt (stream, re=None)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for JSON (stream, re=None)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 0.20954900700598955,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (158 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_required_tool_prompt (stream, re=None)",
+      "description": "response_format=json_schema, tool_choice=required, user asks for tool (stream, re=None)",
+      "tool_choice": "required",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.12609307933598757,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "aQz3dmrEc",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_tool_prompt (stream, re=None)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for tool (forced JSON) (stream, re=None)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4880350800231099,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (160 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n{\n  \"setup\": \"I will now call the get_current_weather tool to retrieve the current weather in Dallas, Texas in Fahrenheit.\",\n  \"punchline\": \"Calling tool...\"\n}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_json_prompt (stream, re=None)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for JSON (stream, re=None)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.19832829758524895,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (145 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why do programmers always mix up Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_tool_prompt (stream, re=None)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for tool (stream, re=None)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.12540852604433894,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "4WjkP8pnI",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_json_prompt (stream, re=None)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for JSON (stream, re=None)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 0.20948015805333853,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (158 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_tool_prompt (stream, re=None)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for tool (forced JSON) (stream, re=None)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.5060502062551677,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (170 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n  {\n    \"setup\": \"I will now use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit.\",\n    \"punchline\": \"Calling the tool...\"\n  }",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_json_prompt (stream, re=None)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for JSON (stream, re=None)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": null,
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.19447459978982806,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (146 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -709,7 +1496,8 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.13687626004684716,
+      "warnings": 0,
+      "duration_s": 0.12602807907387614,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -742,7 +1530,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "UzoAN0EBR",
+          "id": "loeSABuV9",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -764,7 +1552,8 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.0730866679805331,
+      "warnings": 0,
+      "duration_s": 0.06482885871082544,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -805,7 +1594,8 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.13832156697753817,
+      "warnings": 0,
+      "duration_s": 0.12444267608225346,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -841,7 +1631,8 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.1358187649748288,
+      "warnings": 0,
+      "duration_s": 0.12382397288456559,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -874,7 +1665,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "X8lH68OIF",
+          "id": "XgLh6J2vY",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -901,7 +1692,8 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.137264323013369,
+      "warnings": 0,
+      "duration_s": 0.1234181271865964,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -939,7 +1731,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "r3n6ws700",
+          "id": "SkLKb8CB8",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -966,7 +1758,8 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.07961637998232618,
+      "warnings": 0,
+      "duration_s": 0.07307374104857445,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1004,7 +1797,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "cKnL3JwSO",
+          "id": "i6RZk98Rv",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -1024,7 +1817,8 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.9135101509746164,
+      "warnings": 0,
+      "duration_s": 0.9320122860372066,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1039,7 +1833,7 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (710 chars)",
+          "actual": "content (826 chars)",
           "passed": true
         },
         "no_reasoning": {
@@ -1048,7 +1842,7 @@
           "passed": true
         }
       },
-      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- **[Weather.com (The Weather Channel)](https://weather.com/weather/today/l/Dallas+TX)**\n- **[AccuWeather](https://www.accuweather.com/en/us/dallas/75201/weather-forecast/33115)**\n- **[National Weather Service (NWS)](https://www.weather.gov/fwd/)**\n\n### **Current Weather (Example - Check for Updates)**\n*(Note: Weather changes frequently, so verify with a live source.)*\n\n- **Temperature:** ~75\u201390\u00b0F (varies by season)\n- **Conditions:** Sunny, partly cloudy, or rainy (depending on the day)\n- **Humidity:** Often high in summer\n\nWould you like a **5-day forecast** or more details? Let me know!",
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit. Since Dallas is in Texas, I'll use the state abbreviation \"TX\". Let me fetch that information. \nI'll use the weather tool to get the current weather in Dallas, Texas. I'll specify the unit as Fahrenheit. I'll use the get_current_weather function with the city as \"Dallas\" and the state as \"TX\". I'll set the unit to \"fahrenheit\". This will give me the current weather conditions in Dallas, Texas in Fahrenheit. I'll proceed with calling the function. \nI'll call the get_current_weather function with the specified parameters. \nI'll call the function now. \nI'll call the function. \nI'll call the function. \nI'll call the function. \nI'll call the function. \nI'll call the function. \nI'll call the function. \nI'll call the function. \nI'll call the function. \nI",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -1060,7 +1854,8 @@
       "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.1501537379808724,
+      "warnings": 0,
+      "duration_s": 0.06593659799546003,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1075,7 +1870,7 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (101 chars)",
+          "actual": "content (66 chars)",
           "passed": true
         },
         "no_reasoning": {
@@ -1084,19 +1879,20 @@
           "passed": true
         }
       },
-      "content": "Here's a short one for you:\n\n**Why do programmers prefer dark mode?**\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "content": "Why do programmers prefer dark mode?\n\nBecause light attracts bugs!",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
     },
     {
-      "name": "auto_with_tool_prompt (stream, re=none)",
-      "description": "tool_choice=auto, prompt wants weather (stream, re=none)",
+      "name": "json_rf_auto_tool_prompt (non-stream, re=none)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for tool (non-stream, re=none)",
       "tool_choice": "auto",
-      "stream": true,
+      "stream": false,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.13589628401678056,
+      "warnings": 0,
+      "duration_s": 0.12483410211279988,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1129,7 +1925,439 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "nxqhKh8jd",
+          "id": "Iq0uxanW4",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_auto_json_prompt (non-stream, re=none)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for JSON (non-stream, re=none)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 0.2087536659091711,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (158 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_required_tool_prompt (non-stream, re=none)",
+      "description": "response_format=json_schema, tool_choice=required, user asks for tool (non-stream, re=none)",
+      "tool_choice": "required",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.12431437661871314,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "3u4KGjlfN",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_tool_prompt (non-stream, re=none)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for tool (forced JSON) (non-stream, re=none)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 1,
+      "duration_s": 0.7501052198931575,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (367 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "reasoning (259 chars)",
+          "passed": false,
+          "warned": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n{\n  \"setup\": \"I will now call the get_current_weather tool to retrieve the current weather in Dallas, Texas in Fahrenheit.\",\n  \"punchline\": \"Calling tool...\",\n  \"tool_calls\": [\n    {\n      \"type\": \"tool_call\",\n      \"name\": \"get_current_weather\",\n      \"parameters\": {\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"unit\": \"fahrenheit\"\n      }\n    }\n  ]\n}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call the tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_json_prompt (non-stream, re=none)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for JSON (non-stream, re=none)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.19678350491449237,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (145 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why do programmers always mix up Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_tool_prompt (non-stream, re=none)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for tool (non-stream, re=none)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.12398106092587113,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "llkkIMssv",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_json_prompt (non-stream, re=none)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for JSON (non-stream, re=none)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 0.20865098712965846,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (158 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_tool_prompt (non-stream, re=none)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for tool (forced JSON) (non-stream, re=none)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 1,
+      "duration_s": 0.49599576415494084,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (162 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "reasoning (260 chars)",
+          "passed": false,
+          "warned": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n{\n  \"setup\": \"I will now use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit.\",\n  \"punchline\": \"Calling the tool...\"\n}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_json_prompt (non-stream, re=none)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for JSON (non-stream, re=none)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.19638589909300208,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (145 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why do programmers always mix up Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_with_tool_prompt (stream, re=none)",
+      "description": "tool_choice=auto, prompt wants weather (stream, re=none)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.12428529700264335,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "HFb4E42RT",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1151,7 +2379,8 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.07645473803859204,
+      "warnings": 0,
+      "duration_s": 0.06684517720714211,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1192,7 +2421,8 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.1398665330489166,
+      "warnings": 0,
+      "duration_s": 0.12478777207434177,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1228,7 +2458,8 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.13597610197030008,
+      "warnings": 0,
+      "duration_s": 0.12385812308639288,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1261,7 +2492,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "d8gfNttq5",
+          "id": "3peJnwz18",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1288,7 +2519,8 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.1358855339931324,
+      "warnings": 0,
+      "duration_s": 0.12365232408046722,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1326,7 +2558,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "vZNb8iieg",
+          "id": "x6RJJ8Ffu",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1353,7 +2585,8 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.08063649403629825,
+      "warnings": 0,
+      "duration_s": 0.07363482378423214,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1391,7 +2624,7 @@
       "reasoning_content": null,
       "tool_calls": [
         {
-          "id": "J4M9wrDli",
+          "id": "fhCilUOvE",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -1411,7 +2644,8 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.6051113599678501,
+      "warnings": 0,
+      "duration_s": 0.5854061269201338,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1426,7 +2660,7 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (516 chars)",
+          "actual": "content (551 chars)",
           "passed": true
         },
         "no_reasoning": {
@@ -1435,7 +2669,7 @@
           "passed": true
         }
       },
-      "content": "To get the current weather in **Dallas, Texas** in **Fahrenheit**, you can check a reliable weather service like:\n\n- [Weather.com (The Weather Channel)](https://weather.com)\n- [AccuWeather](https://www.accuweather.com)\n- [National Weather Service (NWS)](https://www.weather.gov)\n\nFor example, as of my last update, Dallas typically has temperatures ranging from **40\u00b0F to 90\u00b0F** depending on the season. For real-time data, I recommend checking one of the links above.\n\nWould you like a forecast for a specific date?",
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit. Since Dallas is in Texas, I'll use the state abbreviation \"TX\". I'll use the weather function to fetch this information. I'll set the unit to \"fahrenheit\" as you requested. I'll call the function now. I'll call the function now. I'll call the function now. I'll call the function now. I'll call the function now. I'll call the function now. I'll call the function now. I'll call the function now. I'll call the function now. I'll call the function now. I'll call the function now. I",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -1447,7 +2681,8 @@
       "stream": true,
       "reasoning_effort": "none",
       "passed": true,
-      "duration_s": 0.1404552639578469,
+      "warnings": 0,
+      "duration_s": 0.06562769087031484,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1462,7 +2697,7 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (98 chars)",
+          "actual": "content (66 chars)",
           "passed": true
         },
         "no_reasoning": {
@@ -1471,7 +2706,439 @@
           "passed": true
         }
       },
-      "content": "Here's a short one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs! \ud83d\udc1b\ud83d\udcbb",
+      "content": "Why do programmers prefer dark mode?\n\nBecause light attracts bugs!",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_auto_tool_prompt (stream, re=none)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for tool (stream, re=none)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.12384828319773078,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "HpJEVaUqe",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_auto_json_prompt (stream, re=none)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for JSON (stream, re=none)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 0.2144613228738308,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (157 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always mix up Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_required_tool_prompt (stream, re=none)",
+      "description": "response_format=json_schema, tool_choice=required, user asks for tool (stream, re=none)",
+      "tool_choice": "required",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.12446572631597519,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "5tf1CNZpc",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_tool_prompt (stream, re=none)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for tool (forced JSON) (stream, re=none)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 1,
+      "duration_s": 0.7552317921072245,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (368 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "reasoning (260 chars)",
+          "passed": false,
+          "warned": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n{\n  \"setup\": \"I will now use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit.\",\n  \"punchline\": \"Calling the tool...\",\n  \"tool_calls\": [\n    {\n      \"type\": \"function\",\n      \"name\": \"get_current_weather\",\n      \"parameters\": {\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"unit\": \"fahrenheit\"\n      }\n    }\n  ]\n}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_json_prompt (stream, re=none)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for JSON (stream, re=none)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.19541985914111137,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (146 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_tool_prompt (stream, re=none)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for tool (stream, re=none)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.1265918519347906,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": null,
+      "tool_calls": [
+        {
+          "id": "wQhYbCOwD",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_json_prompt (stream, re=none)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for JSON (stream, re=none)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 0.21408468764275312,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (157 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always mix up Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": null,
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_tool_prompt (stream, re=none)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for tool (forced JSON) (stream, re=none)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 1,
+      "duration_s": 0.5025813719257712,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (164 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "reasoning (260 chars)",
+          "passed": false,
+          "warned": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n{\n  \"setup\": \"I will now use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit.\",\n  \"punchline\": \"Calling the tool now.\"\n}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_json_prompt (stream, re=none)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for JSON (stream, re=none)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "none",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.19352183025330305,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (146 chars)",
+          "passed": true
+        },
+        "no_reasoning": {
+          "expected": "no reasoning content",
+          "actual": "no reasoning content",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25!\",\n  \"category\": \"recursion\"\n}",
       "reasoning_content": null,
       "tool_calls": [],
       "error": null
@@ -1483,363 +3150,8 @@
       "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.5201507220044732,
-      "finish_reason": "tool_calls",
-      "checks": {
-        "no_error": {
-          "expected": "no error",
-          "actual": "ok",
-          "passed": true
-        },
-        "tool_calls_present": {
-          "expected": "tool calls present",
-          "actual": "1 tool call(s)",
-          "passed": true
-        },
-        "tool_call_0_valid": {
-          "expected": "valid function name + parseable JSON args",
-          "actual": "name='get_current_weather', args_parseable=True",
-          "passed": true
-        },
-        "finish_reason": {
-          "expected": "tool_calls",
-          "actual": "tool_calls",
-          "passed": true
-        }
-      },
-      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
-      "tool_calls": [
-        {
-          "id": "8g8cY98UV",
-          "type": "function",
-          "function": {
-            "name": "get_current_weather",
-            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
-            "arguments_parsed": {
-              "city": "Dallas",
-              "state": "TX",
-              "unit": "fahrenheit"
-            }
-          }
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "auto_no_tool_prompt (non-stream, re=high)",
-      "description": "tool_choice=auto, prompt wants joke (non-stream, re=high)",
-      "tool_choice": "auto",
-      "stream": false,
-      "reasoning_effort": "high",
-      "passed": true,
-      "duration_s": 0.3190493099973537,
-      "finish_reason": "stop",
-      "checks": {
-        "no_error": {
-          "expected": "no error",
-          "actual": "ok",
-          "passed": true
-        },
-        "no_tool_calls": {
-          "expected": "no tool calls",
-          "actual": "no tool calls",
-          "passed": true
-        },
-        "content_present": {
-          "expected": "content present",
-          "actual": "content (87 chars)",
-          "passed": true
-        },
-        "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
-          "passed": true
-        },
-        "reasoning_present": {
-          "expected": "reasoning content present",
-          "actual": "reasoning (230 chars)",
-          "passed": true
-        }
-      },
-      "content": "Here's one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs!",
-      "reasoning_content": "The user is asking for a short programming joke. This is a straightforward request that doesn't require any tools - I can just provide a joke from my knowledge base. I should keep it short and relevant to programming as requested.",
-      "tool_calls": [],
-      "error": null
-    },
-    {
-      "name": "auto_tool_result (non-stream, re=high)",
-      "description": "tool_choice=auto, tool result follow-up (non-stream, re=high)",
-      "tool_choice": "auto",
-      "stream": false,
-      "reasoning_effort": "high",
-      "passed": true,
-      "duration_s": 0.47635264799464494,
-      "finish_reason": "tool_calls",
-      "checks": {
-        "no_error": {
-          "expected": "no error",
-          "actual": "ok",
-          "passed": true
-        }
-      },
-      "content": null,
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I have a tool called get_current_weather that can provide this information. I need to call it with the city as \"Dallas\", state as \"TX\", and unit as \"fahrenheit\".\n\nLet me make this call to get the current weather data.",
-      "tool_calls": [
-        {
-          "id": "KH3UR9Rtf",
-          "type": "function",
-          "function": {
-            "name": "get_current_weather",
-            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
-            "arguments_parsed": {
-              "city": "Dallas",
-              "state": "TX",
-              "unit": "fahrenheit"
-            }
-          }
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "required_tool_prompt (non-stream, re=high)",
-      "description": "tool_choice=required, prompt wants weather (non-stream, re=high)",
-      "tool_choice": "required",
-      "stream": false,
-      "reasoning_effort": "high",
-      "passed": true,
-      "duration_s": 0.522095452004578,
-      "finish_reason": "tool_calls",
-      "checks": {
-        "no_error": {
-          "expected": "no error",
-          "actual": "ok",
-          "passed": true
-        },
-        "tool_calls_present": {
-          "expected": "tool calls present",
-          "actual": "1 tool call(s)",
-          "passed": true
-        },
-        "tool_call_0_valid": {
-          "expected": "valid function name + parseable JSON args",
-          "actual": "name='get_current_weather', args_parseable=True",
-          "passed": true
-        },
-        "finish_reason": {
-          "expected": "tool_calls",
-          "actual": "tool_calls",
-          "passed": true
-        }
-      },
-      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
-      "tool_calls": [
-        {
-          "id": "QQXZOTE1G",
-          "type": "function",
-          "function": {
-            "name": "get_current_weather",
-            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
-            "arguments_parsed": {
-              "city": "Dallas",
-              "state": "TX",
-              "unit": "fahrenheit"
-            }
-          }
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "named_weather (non-stream, re=high)",
-      "description": "tool_choice=get_current_weather (named) (non-stream, re=high)",
-      "tool_choice": {
-        "type": "function",
-        "function": {
-          "name": "get_current_weather"
-        }
-      },
-      "stream": false,
-      "reasoning_effort": "high",
-      "passed": true,
-      "duration_s": 0.5194753920077346,
-      "finish_reason": "stop",
-      "checks": {
-        "no_error": {
-          "expected": "no error",
-          "actual": "ok",
-          "passed": true
-        },
-        "tool_calls_present": {
-          "expected": "tool calls present",
-          "actual": "1 tool call(s)",
-          "passed": true
-        },
-        "tool_call_0_valid": {
-          "expected": "valid function name + parseable JSON args",
-          "actual": "name='get_current_weather', args_parseable=True",
-          "passed": true
-        },
-        "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
-          "passed": true
-        },
-        "named_tool_match": {
-          "expected": "function name = 'get_current_weather'",
-          "actual": "function name = 'get_current_weather'",
-          "passed": true
-        }
-      },
-      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
-      "tool_calls": [
-        {
-          "id": "eXguLKkAz",
-          "type": "function",
-          "function": {
-            "name": "get_current_weather",
-            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
-            "arguments_parsed": {
-              "city": "Dallas",
-              "state": "TX",
-              "unit": "fahrenheit"
-            }
-          }
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "named_search_wrong_prompt (non-stream, re=high)",
-      "description": "tool_choice=web_search (named), weather prompt (non-stream, re=high)",
-      "tool_choice": {
-        "type": "function",
-        "function": {
-          "name": "web_search"
-        }
-      },
-      "stream": false,
-      "reasoning_effort": "high",
-      "passed": true,
-      "duration_s": 0.4775488299783319,
-      "finish_reason": "stop",
-      "checks": {
-        "no_error": {
-          "expected": "no error",
-          "actual": "ok",
-          "passed": true
-        },
-        "tool_calls_present": {
-          "expected": "tool calls present",
-          "actual": "1 tool call(s)",
-          "passed": true
-        },
-        "tool_call_0_valid": {
-          "expected": "valid function name + parseable JSON args",
-          "actual": "name='web_search', args_parseable=True",
-          "passed": true
-        },
-        "finish_reason": {
-          "expected": "stop",
-          "actual": "stop",
-          "passed": true
-        },
-        "named_tool_match": {
-          "expected": "function name = 'web_search'",
-          "actual": "function name = 'web_search'",
-          "passed": true
-        }
-      },
-      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
-      "tool_calls": [
-        {
-          "id": "9uz210HP2",
-          "type": "function",
-          "function": {
-            "name": "web_search",
-            "arguments": "{\"search_term\": \"current weather Dallas Texas Fahrenheit\"}",
-            "arguments_parsed": {
-              "search_term": "current weather Dallas Texas Fahrenheit"
-            }
-          }
-        }
-      ],
-      "error": null
-    },
-    {
-      "name": "none_tool_prompt (non-stream, re=high)",
-      "description": "tool_choice=none, prompt wants weather (non-stream, re=high)",
-      "tool_choice": "none",
-      "stream": false,
-      "reasoning_effort": "high",
-      "passed": true,
-      "duration_s": 2.258082229993306,
-      "finish_reason": "stop",
-      "checks": {
-        "no_error": {
-          "expected": "no error",
-          "actual": "ok",
-          "passed": true
-        },
-        "no_tool_calls": {
-          "expected": "no tool calls",
-          "actual": "no tool calls",
-          "passed": true
-        },
-        "content_present": {
-          "expected": "content present",
-          "actual": "content (403 chars)",
-          "passed": true
-        }
-      },
-      "content": "I don't have real-time weather data access, but you can check the current weather in Dallas, Texas, in Fahrenheit on a reliable weather service like the [National Weather Service](https://www.weather.gov/) or a weather app. Typically, Dallas in June has temperatures ranging from the 70s to the 90s Fahrenheit, but for the most accurate and up-to-date information, please check a current weather source.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically in Fahrenheit. To provide this information, I need to fetch the current weather data for Dallas, Texas. Since I don't have real-time web browsing capabilities, I'll need to rely on my knowledge cutoff date of November 1, 2024. However, weather conditions can change frequently, so I might not have the most up-to-date information.\n\nBut since the user is asking for the current weather, and I don't have real-time data access, I should clarify that I can't provide real-time weather updates. However, I can give a general idea based on historical data or suggest that the user check a reliable weather service for the most current information.\n\nBut wait, the user might expect me to have real-time data. Since I don't have web browsing capabilities, I can't fetch real-time data. So, I should inform the user that I can't provide real-time weather updates and suggest they check a weather service like the National Weather Service or a weather app for the most current information.\n\nBut perhaps the user expects me to have this information. Maybe I should ask for clarification or provide a general response about the weather in Dallas based on historical data.\n\nAlternatively, I can say that I don't have real-time data and suggest checking a weather service.\n\nBut the user might be expecting a specific answer. Maybe I can provide a general idea of the weather in Dallas in Fahrenheit based on typical conditions for the current date (assuming today is around June 20, 2025).\n\nTypically, in mid-June, Dallas, Texas has warm temperatures, often in the 90s Fahrenheit during the day and 70s at night. But this is a general estimate and not the current weather.\n\nGiven that, I should clarify that I don't have real-time data and suggest checking a weather service.",
-      "tool_calls": [],
-      "error": null
-    },
-    {
-      "name": "none_no_tool_prompt (non-stream, re=high)",
-      "description": "tool_choice=none, prompt wants joke (non-stream, re=high)",
-      "tool_choice": "none",
-      "stream": false,
-      "reasoning_effort": "high",
-      "passed": true,
-      "duration_s": 0.8599011359619908,
-      "finish_reason": "stop",
-      "checks": {
-        "no_error": {
-          "expected": "no error",
-          "actual": "ok",
-          "passed": true
-        },
-        "no_tool_calls": {
-          "expected": "no tool calls",
-          "actual": "no tool calls",
-          "passed": true
-        },
-        "content_present": {
-          "expected": "content present",
-          "actual": "content (85 chars)",
-          "passed": true
-        }
-      },
-      "content": "Why do programmers always mix up Halloween and Christmas?\nBecause `Oct 31 == Dec 25`!",
-      "reasoning_content": "Okay, the user wants a short joke about programming. I need to think of something that's both funny and relevant to programming. Maybe something about bugs, loops, or syntax errors. Let me recall a few programming jokes I know.\n\nOne classic is about a programmer's wife asking him to go to the store and get a loaf of bread. If there are eggs, get a dozen. So he comes back with 12 loaves of bread. That's a play on the if statement in programming.\n\nAnother one is about why programmers confuse Halloween and Christmas. Because Oct 31 == Dec 25. That's a play on the octal and decimal representations.\n\nI think the second one is shorter and more to the point. So I'll go with that one.",
-      "tool_calls": [],
-      "error": null
-    },
-    {
-      "name": "auto_with_tool_prompt (stream, re=high)",
-      "description": "tool_choice=auto, prompt wants weather (stream, re=high)",
-      "tool_choice": "auto",
-      "stream": true,
-      "reasoning_effort": "high",
-      "passed": true,
-      "duration_s": 0.4958217720268294,
+      "warnings": 0,
+      "duration_s": 0.45929394802078605,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1867,7 +3179,7 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call.",
       "tool_calls": [
         {
-          "id": "txDsY9sxq",
+          "id": "FfJ4DBZOa",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1883,13 +3195,14 @@
       "error": null
     },
     {
-      "name": "auto_no_tool_prompt (stream, re=high)",
-      "description": "tool_choice=auto, prompt wants joke (stream, re=high)",
+      "name": "auto_no_tool_prompt (non-stream, re=high)",
+      "description": "tool_choice=auto, prompt wants joke (non-stream, re=high)",
       "tool_choice": "auto",
-      "stream": true,
+      "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.6893774790223688,
+      "warnings": 0,
+      "duration_s": 0.5151119860820472,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -1914,23 +3227,24 @@
         },
         "reasoning_present": {
           "expected": "reasoning content present",
-          "actual": "reasoning (565 chars)",
+          "actual": "reasoning (415 chars)",
           "passed": true
         }
       },
       "content": "Why do programmers always mix up Halloween and Christmas?\n\nBecause `Oct 31 == Dec 25`!",
-      "reasoning_content": "The user wants a short programming joke. This is a straightforward request that doesn't require any tools - I can just provide a joke directly from my knowledge base. Let me think of a good, short programming joke.\n\nSome classic programming jokes include:\n- Why do programmers prefer dark mode? Because light attracts bugs.\n- Why do Java developers wear glasses? Because they can't C#.\n- There are 10 types of people in the world: those who understand binary, and those who don't.\n\nI'll go with a simple, well-known one that's appropriate and gets the point across.",
+      "reasoning_content": "The user wants a short programming joke. I don't need to use any tools for this - I can just provide a joke from my knowledge base. Let me think of a good, short programming joke.\n\nA classic one is: Why do programmers prefer dark mode? Because light attracts bugs!\n\nOr another good one: Why did the programmer quit his job? Because he didn't get arrays!\n\nLet me go with a simple, classic one that's short and sweet.",
       "tool_calls": [],
       "error": null
     },
     {
-      "name": "auto_tool_result (stream, re=high)",
-      "description": "tool_choice=auto, tool result follow-up (stream, re=high)",
+      "name": "auto_tool_result (non-stream, re=high)",
+      "description": "tool_choice=auto, tool result follow-up (non-stream, re=high)",
       "tool_choice": "auto",
-      "stream": true,
+      "stream": false,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.4919060009997338,
+      "warnings": 0,
+      "duration_s": 0.43461854569613934,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1940,10 +3254,10 @@
         }
       },
       "content": null,
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I have a tool called get_current_weather that can provide this information. I need to call it with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the current weather data.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I have a tool called get_current_weather that can provide this information. I need to call this tool with the city as \"Dallas\", state as \"TX\", and unit as \"fahrenheit\".\n\nLet me make this call to get the current weather data.",
       "tool_calls": [
         {
-          "id": "jNGfAoRrW",
+          "id": "2FQtbUlIs",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -1959,13 +3273,674 @@
       "error": null
     },
     {
-      "name": "required_tool_prompt (stream, re=high)",
-      "description": "tool_choice=required, prompt wants weather (stream, re=high)",
+      "name": "required_tool_prompt (non-stream, re=high)",
+      "description": "tool_choice=required, prompt wants weather (non-stream, re=high)",
       "tool_choice": "required",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.47911232477054,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
+      "tool_calls": [
+        {
+          "id": "R3ARrjJDg",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_weather (non-stream, re=high)",
+      "description": "tool_choice=get_current_weather (named) (non-stream, re=high)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "get_current_weather"
+        }
+      },
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4558223858475685,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'get_current_weather'",
+          "actual": "function name = 'get_current_weather'",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call.",
+      "tool_calls": [
+        {
+          "id": "TZLPsYKPC",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "named_search_wrong_prompt (non-stream, re=high)",
+      "description": "tool_choice=web_search (named), weather prompt (non-stream, re=high)",
+      "tool_choice": {
+        "type": "function",
+        "function": {
+          "name": "web_search"
+        }
+      },
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4178567361086607,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='web_search', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "named_tool_match": {
+          "expected": "function name = 'web_search'",
+          "actual": "function name = 'web_search'",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call.",
+      "tool_calls": [
+        {
+          "id": "BLghelAzf",
+          "type": "function",
+          "function": {
+            "name": "web_search",
+            "arguments": "{\"search_term\": \"current weather Dallas Texas Fahrenheit\"}",
+            "arguments_parsed": {
+              "search_term": "current weather Dallas Texas Fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "none_tool_prompt (non-stream, re=high)",
+      "description": "tool_choice=none, prompt wants weather (non-stream, re=high)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.8526310599409044,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (499 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (220 chars)",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit. Let me check that now. \ud83c\udf24\ufe0f\n<use_for_thinking>\nThe user wants the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas abbreviation)\n- unit: \"fahrenheit\"\n</use_for_thinking> <invoke name=\"get_current_weather\">\n<parameter name=\"city\">Dallas</parameter>\n<parameter name=\"state\">TX</parameter>\n<parameter name=\"unit\">fahrenheit</parameter>\n</invoke>",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "none_no_tool_prompt (non-stream, re=high)",
+      "description": "tool_choice=none, prompt wants joke (non-stream, re=high)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.27692412910982966,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (87 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (205 chars)",
+          "passed": true
+        }
+      },
+      "content": "Here's one for you:\n\nWhy do programmers prefer dark mode?\n\nBecause light attracts bugs!",
+      "reasoning_content": "The user is asking for a short programming joke. This is a straightforward request that doesn't require any tools - I can just provide a joke from my knowledge base. No need to search or use any functions.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_auto_tool_prompt (non-stream, re=high)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for tool (non-stream, re=high)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4998650597408414,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll look up the current weather in Dallas, Texas in Fahrenheit for you.",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call the tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [
+        {
+          "id": "j4CslWzmq",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_auto_json_prompt (non-stream, re=high)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for JSON (non-stream, re=high)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 1.3553684293292463,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (207 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (1167 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"To understand recursion, you must first understand recursion.\",\n  \"punchline\": \"It's like a snake eating its own tail, but the snake is also the plate!\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": "The user wants a JSON object with a programming joke about recursion. I need to create a joke with setup, punchline, and category fields. Let me think of a classic recursion joke.\n\nA common recursion joke is:\nSetup: \"To understand recursion, you must first understand recursion.\"\nPunchline: (often left as an exercise to the reader, or sometimes \"It's turtles all the way down\")\n\nBut I should make it more explicit and funny. Let me create a proper joke:\n\nSetup: \"Why do programmers prefer iOS development over recursion?\"\nPunchline: \"Because with recursion, you never reach the base case!\"\n\nWait, that's not quite right. Let me think of a better one.\n\nBetter version:\nSetup: \"How many programmers does it take to change a light bulb?\"\nPunchline: \"None, that's a hardware problem. None, that's a hardware problem. None, that's a hardware problem...\"\n\nNo, that's not recursion.\n\nClassic recursion joke:\nSetup: \"To understand recursion, you must first understand recursion.\"\n\nThat's the standard one. Let me use that with a category.\n\nCategory could be \"computer science\", \"programming\", \"recursion\", etc.\n\nLet me structure it as a JSON object with the required fields.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_required_tool_prompt (non-stream, re=high)",
+      "description": "response_format=json_schema, tool_choice=required, user asks for tool (non-stream, re=high)",
+      "tool_choice": "required",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4989511310122907,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll look up the current weather in Dallas, Texas in Fahrenheit for you.",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [
+        {
+          "id": "ouldixdBA",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_tool_prompt (non-stream, re=high)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for tool (forced JSON) (non-stream, re=high)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4719430017285049,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (88 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (260 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n \n \n \n {\"setup\": \"Dallas, TX\", \"punchline\": \"It's 72\u00b0F and sunny with a light breeze.\"}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_json_prompt (non-stream, re=high)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for JSON (non-stream, re=high)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.7257760111242533,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (144 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (514 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why do programmers always mix up Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25\",\n  \"category\": \"recursion\"\n}",
+      "reasoning_content": "The user wants a JSON object with a programming joke about recursion. I need to create a joke with setup, punchline, and category fields. Let me think of a classic recursion joke:\n\nSetup: \"Why do programmers always mix up Halloween and Christmas?\"\nPunchline: \"Because Oct 31 == Dec 25\"\n\nThis is a well-known programming joke that plays on the fact that in programming, octal 31 equals decimal 25. The category could be \"programming\" or \"recursion\" or \"math joke\".\n\nLet me format this as a JSON object as requested.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_tool_prompt (non-stream, re=high)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for tool (non-stream, re=high)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4219297827221453,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [
+        {
+          "id": "oYo1JwMq2",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_json_prompt (non-stream, re=high)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for JSON (non-stream, re=high)",
+      "tool_choice": "auto",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 1.1709168120287359,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (156 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (979 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always mix up Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": "The user wants a JSON object with three fields: setup, punchline, and category, describing a programming joke about recursion. I need to create a funny example about recursion and format it as JSON.\n\nLet me think of a classic recursion joke:\n- Setup: \"Why do programmers always mix up Halloween and Christmas?\"\n- Punchline: \"Because Oct 31 == Dec 25\"\n- Category: \"programming\" or \"recursion\"\n\nThis is a well-known programming joke that plays on the fact that in programming, octal 31 (Oct 31) equals decimal 25 (Dec 25), and it's a pun on the dates for Halloween (October 31) and Christmas (December 25).\n\nThis fits perfectly as it's about programming/recursion concepts (even though it's not strictly about recursion itself, it's a programming joke that programmers would appreciate). The user asked for a joke \"about recursion\" - this is a programming joke that would be appreciated by programmers who understand recursion concepts.\n\nLet me format this as a proper JSON object.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_tool_prompt (non-stream, re=high)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for tool (forced JSON) (non-stream, re=high)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.5096388552337885,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (127 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (260 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n \n \n \n {\"setup\": \"Dallas, TX\", \"punchline\": \"It's 72\u00b0F and sunny with a light breeze\u2014perfect weather for a Cowboys tailgate!\"}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_json_prompt (non-stream, re=high)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for JSON (non-stream, re=high)",
+      "tool_choice": "none",
+      "stream": false,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 1.0093873958103359,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (146 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (758 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why do programmers always mix up Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25\",\n  \"category\": \"programming\"\n}",
+      "reasoning_content": "The user wants a JSON object with a programming joke about recursion. I need to create a joke with setup, punchline, and category fields. Let me think of a classic recursion joke:\n\nSetup: \"Why do programmers always mix up Halloween and Christmas?\"\nPunchline: \"Because Oct 31 == Dec 25\"\nCategory: \"programming\"\n\nThis is a well-known programming joke that plays on the fact that in programming, octal 31 (Oct 31) equals decimal 25 (Dec 25) because 31 in octal is 3*8 + 1 = 25 in decimal.\n\nThis fits the requirements perfectly - it's about programming, it's a joke, and it's about recursion (well, it's a pun/joke that programmers would appreciate, and it's commonly shared in programming circles).\n\nLet me format this as a JSON object with the required fields.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_with_tool_prompt (stream, re=high)",
+      "description": "tool_choice=auto, prompt wants weather (stream, re=high)",
+      "tool_choice": "auto",
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.515777099004481,
+      "warnings": 0,
+      "duration_s": 0.4708954840898514,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -1993,7 +3968,136 @@
       "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
       "tool_calls": [
         {
-          "id": "KcDEAfknm",
+          "id": "kLOmCB4GA",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "auto_no_tool_prompt (stream, re=high)",
+      "description": "tool_choice=auto, prompt wants joke (stream, re=high)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.6131212483160198,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (86 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (536 chars)",
+          "passed": true
+        }
+      },
+      "content": "Why do programmers always mix up Halloween and Christmas?\n\nBecause `Oct 31 == Dec 25`!",
+      "reasoning_content": "The user wants a short programming joke. This is a straightforward request that doesn't require any tools - I can just provide a joke from my knowledge base. Let me think of a good short programming joke.\n\nSome classic programming jokes include:\n- Why do programmers prefer dark mode? Because light attracts bugs.\n- Why did the programmer quit his job? He didn't get arrays.\n- There are 10 types of people in the world: those who understand binary, and those who don't.\n\nI'll go with a simple, classic one that's short and to the point.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "auto_tool_result (stream, re=high)",
+      "description": "tool_choice=auto, tool result follow-up (stream, re=high)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.44770991429686546,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        }
+      },
+      "content": null,
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I have a tool called get_current_weather that can provide this information. I need to call it with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the current weather data.",
+      "tool_calls": [
+        {
+          "id": "oJgQIQ0q3",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "required_tool_prompt (stream, re=high)",
+      "description": "tool_choice=required, prompt wants weather (stream, re=high)",
+      "tool_choice": "required",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4555366188287735,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call.",
+      "tool_calls": [
+        {
+          "id": "gXc1BJOu5",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -2020,7 +4124,8 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.5212725650053471,
+      "warnings": 0,
+      "duration_s": 0.36818410316482186,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -2049,11 +4154,11 @@
           "passed": true
         }
       },
-      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
+      "content": null,
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically in Fahrenheit. I need to use the get_current_weather function with the city as \"Dallas\" and state as \"TX\" (Texas), and set the unit to \"fahrenheit\".",
       "tool_calls": [
         {
-          "id": "PknZWxoB5",
+          "id": "fPfMRyeZG",
           "type": "function",
           "function": {
             "name": "get_current_weather",
@@ -2080,7 +4185,8 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.47416758100735024,
+      "warnings": 0,
+      "duration_s": 0.4385489630512893,
       "finish_reason": "tool_calls",
       "checks": {
         "no_error": {
@@ -2110,10 +4216,10 @@
         }
       },
       "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit.",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this call to get the weather information.",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
       "tool_calls": [
         {
-          "id": "Cb22r7wGL",
+          "id": "bzMa9bdZ6",
           "type": "function",
           "function": {
             "name": "web_search",
@@ -2133,7 +4239,8 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 0.739386358007323,
+      "warnings": 0,
+      "duration_s": 0.5865375539287925,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -2148,12 +4255,17 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (281 chars)",
+          "actual": "content (204 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (251 chars)",
           "passed": true
         }
       },
-      "content": "I don't have real-time data access to provide the current weather in Dallas, Texas. However, you can check the current weather on a weather website or app like Weather.com, AccuWeather, or the National Weather Service. Would you like general climate information for Dallas instead?",
-      "reasoning_content": "The user is asking for the current weather in Dallas, Texas, specifically in Fahrenheit. To provide this information, I need to know the current date and time because weather conditions change frequently. However, since I don't have real-time data access, I can't provide the current weather. But I can guide the user on how to find this information or provide general climate information for Dallas, Texas.\n\nBut first, I should confirm if the user wants the current weather or general climate information.",
+      "content": "I'll get the current weather in Dallas, Texas for you in Fahrenheit. Let me check that now. \ud83c\udf24\ufe0f\n<use_tool>\n{\"name\": \"get_current_weather\", \"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}\n</use_tool>",
+      "reasoning_content": "The user is asking for the current weather in Dallas, Texas in Fahrenheit. I need to use the get_current_weather function with:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this function call to get the weather information.",
       "tool_calls": [],
       "error": null
     },
@@ -2164,7 +4276,8 @@
       "stream": true,
       "reasoning_effort": "high",
       "passed": true,
-      "duration_s": 1.3150386569905095,
+      "warnings": 0,
+      "duration_s": 0.6205895859748125,
       "finish_reason": "stop",
       "checks": {
         "no_error": {
@@ -2179,12 +4292,432 @@
         },
         "content_present": {
           "expected": "content present",
-          "actual": "content (83 chars)",
+          "actual": "content (86 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (545 chars)",
           "passed": true
         }
       },
-      "content": "Why do programmers always mix up Halloween and Christmas?\nBecause Oct 31 == Dec 25.",
-      "reasoning_content": "I need to come up with a short joke about programming. Programming jokes often play on common terms, concepts, or stereotypes in the field. Let me think of some programming-related terms and concepts that could be used humorously.\n\nOne common joke is about the difference between Java and JavaScript, or about null pointers, or infinite loops. Another angle is to play on the idea of bugs in code.\n\nHere's a classic one:\nWhy do programmers prefer dark mode?\nBecause light attracts bugs.\n\nBut that's more about bugs in general. Let me think of something more directly related to programming.\n\nHow about this one:\nWhy did the programmer quit his job?\nBecause he didn't get arrays.\n\nWait, that doesn't make sense. Maybe:\nWhy did the programmer go broke?\nBecause he used up all his cache.\n\nThat's a play on the term \"cache\" which is both a computer term and sounds like \"cash\".\n\nAlternatively:\nWhy do programmers always mix up Halloween and Christmas?\nBecause Oct 31 == Dec 25.\n\nThat's a play on the fact that in programming, octal 31 is equal to decimal 25.\n\nI think the last one is a good one because it's short and plays on a programming concept (octal vs decimal numbers).",
+      "content": "Why do programmers always mix up Halloween and Christmas?\n\nBecause `Oct 31 == Dec 25`!",
+      "reasoning_content": "The user wants a short programming joke. This is a straightforward request that doesn't require any tools - I can just provide a joke from my knowledge base. Let me think of a good, short programming joke.\n\nSome classic programming jokes include:\n- Why do programmers prefer dark mode? Because light attracts bugs.\n- Why did the programmer quit his job? Because he didn't get arrays.\n- There are 10 types of people in the world: those who understand binary, and those who don't.\n\nI'll go with a simple, classic one that's short and to the point.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_auto_tool_prompt (stream, re=high)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for tool (stream, re=high)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4983843471854925,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll look up the current weather in Dallas, Texas in Fahrenheit for you.",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call the tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [
+        {
+          "id": "l2g0e5LUn",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_auto_json_prompt (stream, re=high)",
+      "description": "response_format=json_schema, tool_choice=auto, user asks for JSON (stream, re=high)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 0.7348552620969713,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (157 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (527 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always confuse Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": "The user wants a JSON object with a programming joke about recursion. I need to create a joke with setup, punchline, and category fields. Let me think of a classic recursion joke:\n\nSetup: \"Why do programmers always confuse Halloween and Christmas?\"\nPunchline: \"Because Oct 31 == Dec 25\"\n\nThis is a well-known programming joke that plays on the fact that in programming, octal 31 equals decimal 25. The category could be \"recursion\" or \"programming humor\" or something similar.\n\nLet me format this as a JSON object as requested.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_required_tool_prompt (stream, re=high)",
+      "description": "response_format=json_schema, tool_choice=required, user asks for tool (stream, re=high)",
+      "tool_choice": "required",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4982269979082048,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll look up the current weather in Dallas, Texas in Fahrenheit for you.",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call the tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [
+        {
+          "id": "VMPhZrZED",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_tool_prompt (stream, re=high)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for tool (forced JSON) (stream, re=high)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.5242865169420838,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (128 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (259 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n \n \n \n {\"setup\": \"Dallas, TX\", \"punchline\": \"It's 72\u00b0F and sunny with a gentle breeze\u2014perfect for a Tex-Mex lunch on a patio!\"}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call the tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_rf_none_json_prompt (stream, re=high)",
+      "description": "response_format=json_schema, tool_choice=none, user asks for JSON (stream, re=high)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 1.8786717168986797,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (120 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (1771 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"Why did the programmer quit his job?\",\n  \"punchline\": \"He didn't get arrays.\",\n  \"category\": \"recursion\"\n}",
+      "reasoning_content": "The user wants a JSON object with a programming joke about recursion. I need to create a joke with setup, punchline, and category fields. Let me think of a classic recursion joke.\n\nA common recursion joke is:\nSetup: \"To understand recursion, you must first understand recursion.\"\nPunchline: (often the same or a variation)\n\nBut I can make it more programming-specific. How about:\nSetup: \"Why do programmers always confuse Halloween and Christmas?\"\nPunchline: \"Because Oct 31 == Dec 25\"\n\nWait, that's not about recursion specifically. Let me think of a better recursion joke.\n\nBetter one:\nSetup: \"How many programmers does it take to change a lightbulb?\"\nPunchline: \"None, that's a hardware problem.\"\n\nNo, that's not recursion either.\n\nClassic recursion joke:\nSetup: \"To understand recursion, you must first understand recursion.\"\n\nThat's the standard one. Let me use that with category \"recursion\" or \"computer science\".\n\nSo the JSON would be:\n{\n  \"setup\": \"To understand recursion, you must first understand recursion.\",\n  \"punchline\": \"It's turtles all the way down!\",\n  \"category\": \"recursion\"\n}\n\nWait, \"It's turtles all the way down\" is more of a general recursion/induction joke. Let me make it more programming-specific.\n\nAlternative punchline: \"The function calls itself until the stack overflows.\"\n\nOr: \"You run out of stack space.\"\n\nLet me go with a cleaner version:\nSetup: \"To understand recursion, you must first understand recursion.\"\nPunchline: \"Just kidding! It's a function that calls itself.\"\nCategory: \"recursion\"\n\nActually, the most classic version is just the setup being the same as the concept, and the punchline being something like \"It's like a snake eating its own tail\" or similar.\n\nLet me create a proper JSON object with a funny recursion joke.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_tool_prompt (stream, re=high)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for tool (stream, re=high)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.5028024092316628,
+      "finish_reason": "tool_calls",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "tool_calls_present": {
+          "expected": "tool calls present",
+          "actual": "1 tool call(s)",
+          "passed": true
+        },
+        "tool_call_0_valid": {
+          "expected": "valid function name + parseable JSON args",
+          "actual": "name='get_current_weather', args_parseable=True",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "tool_calls",
+          "actual": "tool_calls",
+          "passed": true
+        }
+      },
+      "content": "I'll look up the current weather in Dallas, Texas in Fahrenheit for you.",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call now.",
+      "tool_calls": [
+        {
+          "id": "534sFaDHh",
+          "type": "function",
+          "function": {
+            "name": "get_current_weather",
+            "arguments": "{\"city\": \"Dallas\", \"state\": \"TX\", \"unit\": \"fahrenheit\"}",
+            "arguments_parsed": {
+              "city": "Dallas",
+              "state": "TX",
+              "unit": "fahrenheit"
+            }
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "json_so_auto_json_prompt (stream, re=high)",
+      "description": "structured_outputs=json, tool_choice=auto, user asks for JSON (stream, re=high)",
+      "tool_choice": "auto",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": false,
+      "warnings": 0,
+      "duration_s": 0.8458671732805669,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (156 chars)",
+          "passed": true
+        },
+        "finish_reason": {
+          "expected": "stop",
+          "actual": "stop",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (625 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "passed": false
+        }
+      },
+      "content": "```json\n{\n  \"setup\": \"Why do programmers always mix up Halloween and Christmas?\",\n  \"punchline\": \"Because Oct 31 == Dec 25\",\n  \"category\": \"recursion\"\n}\n```",
+      "reasoning_content": "The user wants a JSON object with three fields: setup, punchline, and category, describing a programming joke about recursion. I need to create a funny example about recursion and format it as JSON.\n\nLet me think of a classic recursion joke:\n- Setup: \"Why do programmers always mix up Halloween and Christmas?\"\n- Punchline: \"Because Oct 31 == Dec 25\"\n- Category: \"programming\" or \"recursion\"\n\nThis is a well-known programming joke that plays on the fact that in programming, octal 31 equals decimal 25, and October 31 is Halloween while December 25 is Christmas.\n\nLet me format this as a JSON object with the required fields.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_tool_prompt (stream, re=high)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for tool (forced JSON) (stream, re=high)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 0.4558550361543894,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (90 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (260 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "\n  {\"setup\": \"Dallas, TX\", \"punchline\": \"It's 72\u00b0F and sunny in Dallas, Texas right now!\"}",
+      "reasoning_content": "The user wants me to use the get_current_weather tool to look up the current weather in Dallas, Texas in Fahrenheit. I need to call this tool with the required parameters:\n- city: \"Dallas\"\n- state: \"TX\" (Texas)\n- unit: \"fahrenheit\"\n\nLet me make this tool call.",
+      "tool_calls": [],
+      "error": null
+    },
+    {
+      "name": "json_so_none_json_prompt (stream, re=high)",
+      "description": "structured_outputs=json, tool_choice=none, user asks for JSON (stream, re=high)",
+      "tool_choice": "none",
+      "stream": true,
+      "reasoning_effort": "high",
+      "passed": true,
+      "warnings": 0,
+      "duration_s": 2.286219344008714,
+      "finish_reason": "stop",
+      "checks": {
+        "no_error": {
+          "expected": "no error",
+          "actual": "ok",
+          "passed": true
+        },
+        "no_tool_calls": {
+          "expected": "no tool calls",
+          "actual": "no tool calls",
+          "passed": true
+        },
+        "content_present": {
+          "expected": "content present",
+          "actual": "content (177 chars)",
+          "passed": true
+        },
+        "reasoning_present": {
+          "expected": "reasoning content present",
+          "actual": "reasoning (2075 chars)",
+          "passed": true
+        },
+        "json_content_valid": {
+          "expected": "valid JSON content",
+          "actual": "valid JSON",
+          "passed": true
+        }
+      },
+      "content": "{\n  \"setup\": \"To understand recursion, you must first understand recursion.\",\n  \"punchline\": \"It's like a snake eating its own tail, but with code!\",\n  \"category\": \"recursion\"\n}",
+      "reasoning_content": "The user wants a JSON object with a programming joke about recursion. They want it to have three fields: setup (string), punchline (string), and category (string).\n\nI need to create a funny programming joke about recursion. Let me think of a classic one:\n\nSetup: \"Why do programmers always mix up Halloween and Christmas?\"\nPunchline: \"Because Oct 31 == Dec 25\"\n\nWait, that's about octal and decimal representations, not specifically recursion. Let me think of a recursion-specific joke.\n\nClassic recursion joke:\n\"Why did the programmer quit his job?\"\n\"Because he didn't get arrays.\"\n\nNo, that's not about recursion either.\n\nBetter recursion joke:\nSetup: \"To understand recursion, you must first understand recursion.\"\nPunchline: (that's the whole joke)\n\nOr another one:\nSetup: \"A function walks into a bar and asks for a drink.\"\nPunchline: \"The bartender says, 'Sorry, we don't serve functions here.' The function replies, 'That's okay, I don't need to be served. I can call myself.'\"\n\nActually, the most classic one is:\nSetup: \"To understand recursion, you must first understand recursion.\"\n\nBut that's too meta. Let me think of a better one that fits the JSON format perfectly.\n\nHow about:\n{\n  \"setup\": \"Why do programmers prefer i to j?\",\n  \"punchline\": \"Because i is the first letter of 'iteration', and j is the first letter of 'joke'... but that's not recursion.\",\n  \"category\": \"recursion\"\n}\n\nNo, that's not good.\n\nLet me go with a classic:\n{\n  \"setup\": \"To understand recursion, you must first understand recursion.\",\n  \"punchline\": \"It's a self-referential joke that perfectly illustrates the concept!\",\n  \"category\": \"recursion\"\n}\n\nThis is simple, clear, and directly about recursion. The setup sets up the concept, and the punchline explains why it's funny in the context of recursion.\n\nAlternatively, I could use:\nSetup: \"What's the best thing about a Boolean?\"\nPunchline: \"Even if you're wrong, you're only off by a bit.\"\n\nBut that's not about recursion.\n\nLet me stick with the classic self-referential recursion joke. It's the most appropriate for this request.",
       "tool_calls": [],
       "error": null
     }

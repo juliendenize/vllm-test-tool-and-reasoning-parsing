@@ -1,5 +1,4 @@
-"""
-Standalone test script for vLLM tool calling.
+"""Standalone test script for vLLM tool calling.
 
 Tests tool_choice modes (auto, required, named, none) with and without
 streaming, and with different reasoning_effort levels (None, "none", "high")
@@ -7,10 +6,16 @@ against a running vLLM-compatible server. Prints a colored summary table
 and writes detailed results (tool calls, reasoning trace, content) to a
 JSON file.
 
+Also tests JSON / structured output interaction with tool calling:
+the model should still call tools when the user asks for it even when
+a JSON response_format or structured_outputs schema is active, and
+should produce valid JSON content (not tool calls) when the user asks
+for JSON output.
+
 When reasoning_effort is supported by the model:
-  - None  (omitted):  model reasons (thinking enabled by default)
-  - "high":           model reasons explicitly
-  - "none":           reasoning disabled, no thinking trace expected
+  - None  (omitted):  model decides on its own (not enforced)
+  - "high":           model should reason (warning if it doesn't)
+  - "none":           model should not reason (warning if it does)
 
 Use --no-reasoning-effort for models that do not support the parameter.
 In that mode the reasoning_effort dimension is skipped entirely and the
@@ -130,6 +135,30 @@ SEARCH_TOOL: dict[str, Any] = {
 ALL_TOOLS = [WEATHER_TOOL, SEARCH_TOOL]
 
 # ---------------------------------------------------------------------------
+# JSON schemas for structured output tests
+# ---------------------------------------------------------------------------
+WEATHER_JSON_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "city": {"type": "string"},
+        "temperature": {"type": "number"},
+        "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]},
+        "conditions": {"type": "string"},
+    },
+    "required": ["city", "temperature"],
+}
+
+JOKE_JSON_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "setup": {"type": "string"},
+        "punchline": {"type": "string"},
+        "category": {"type": "string"},
+    },
+    "required": ["setup", "punchline"],
+}
+
+# ---------------------------------------------------------------------------
 # Messages for different scenarios
 # ---------------------------------------------------------------------------
 # Should trigger a tool call (weather)
@@ -174,13 +203,38 @@ MESSAGES_TOOL_RESULT: list[dict[str, Any]] = [
     },
 ]
 
+# User explicitly asks for JSON — model should produce JSON content, not tools.
+# Deliberately avoids weather-related topics so the model is not tempted to
+# call the weather tool instead of producing JSON.
+MESSAGES_WANT_JSON: list[dict[str, Any]] = [
+    {
+        "role": "user",
+        "content": (
+            "Give me a JSON object describing a programming joke with "
+            "fields: setup (string), punchline (string), and category "
+            "(string). Fill it with a funny example about recursion."
+        ),
+    }
+]
+
+# User explicitly asks for tool use even though JSON format is on
+MESSAGES_WANT_TOOL_EXPLICITLY: list[dict[str, Any]] = [
+    {
+        "role": "user",
+        "content": (
+            "Use the get_current_weather tool to look up the current weather "
+            "in Dallas, Texas in Fahrenheit. Call the tool now."
+        ),
+    }
+]
+
 
 # ---------------------------------------------------------------------------
 # Test case definitions
 # ---------------------------------------------------------------------------
 @dataclass
 class TestCase:
-    """A single test scenario."""
+    r"""A single test scenario."""
 
     name: str
     description: str
@@ -194,10 +248,19 @@ class TestCase:
     expect_content: bool | None  # True = must have, False = must not, None = either
     expect_finish_reason: str | None  # expected finish_reason, None = don't check
     expect_reasoning: bool | None  # True = must have, False = must not, None = either
+    expect_reasoning_warn_only: bool = (
+        False  # True = reasoning mismatch is warning, not error
+    )
+    expect_json_content: bool = False  # True = validate content is valid JSON
+    # Optional request parameters for JSON / structured output tests
+    response_format: dict[str, Any] | None = None  # OpenAI response_format parameter
+    extra_body_overrides: dict[str, Any] | None = (
+        None  # extra_body fields (e.g. structured_outputs)
+    )
 
 
 def _reasoning_effort_label(re_val: str | None) -> str:
-    """Human-readable label for a reasoning_effort value."""
+    r"""Human-readable label for a reasoning_effort value."""
     if re_val is None:
         return "re=None"
     return f"re={re_val}"
@@ -206,7 +269,7 @@ def _reasoning_effort_label(re_val: str | None) -> str:
 def build_test_cases(
     reasoning_efforts: list[str | None],
 ) -> list[TestCase]:
-    """Build the full test matrix.
+    r"""Build the full test matrix.
 
     Args:
         reasoning_efforts: list of reasoning_effort values to iterate over.
@@ -219,28 +282,34 @@ def build_test_cases(
     for re_val in reasoning_efforts:
         re_label = _reasoning_effort_label(re_val)
 
-        # When reasoning_effort is "none" the server disables thinking,
-        # so we must NOT expect reasoning content.  For None / "high" the
-        # model should reason — but the Mistral grammar only requires
-        # thinking when content is generated.  If the model produces
-        # only tool calls (via the fcalls-only grammar path), there
-        # is no thinking.  We use two flavours:
-        #   expect_reasoning_content: True when content IS expected
-        #   expect_reasoning_maybe:   None when model might skip think
-        if re_val == "none":
-            expect_reasoning_content: bool | None = False
-            expect_reasoning_maybe: bool | None = False
-        elif re_val in ("high",):
-            # Grammar requires thinking only before content, not before
-            # bare tool calls, so tool-call-only tests may not have
-            # reasoning output.
-            expect_reasoning_content = True
-            expect_reasoning_maybe = None
-        else:
-            # None – param omitted; model reasons by default but we
-            # cannot be 100 % sure for every model, so don't enforce.
-            expect_reasoning_content = None
-            expect_reasoning_maybe = None
+        # Reasoning expectations are now advisory (warn-only) for
+        # "none" and "high".  For None the param is omitted and
+        # reasoning presence is completely unchecked.
+        #
+        # expect_reasoning_content: value for content-producing prompts
+        # expect_reasoning_maybe:   value for tool-only prompts (may skip)
+        # warn_only:                whether a mismatch is a warning
+        # warn_only_none_json:      for tool_choice=none + JSON schema tests,
+        #                           re="high" is hardened (grammar is
+        #                           ``think? SAFE_WS? %json``, thinking
+        #                           should reliably fire)
+        match re_val:
+            case "none":
+                expect_reasoning_content: bool | None = False
+                expect_reasoning_maybe: bool | None = False
+                warn_only = True
+                warn_only_none_json = True
+            case "high":
+                expect_reasoning_content = True
+                expect_reasoning_maybe = None
+                warn_only = True
+                warn_only_none_json = False
+            case _:
+                # None – param omitted; completely unchecked.
+                expect_reasoning_content = None
+                expect_reasoning_maybe = None
+                warn_only = False
+                warn_only_none_json = False
 
         for stream in (False, True):
             sfx_parts = []
@@ -263,6 +332,7 @@ def build_test_cases(
                     expect_content=None,
                     expect_finish_reason="tool_calls",
                     expect_reasoning=expect_reasoning_maybe,
+                    expect_reasoning_warn_only=warn_only,
                 )
             )
             # Prompt that should NOT trigger tools
@@ -279,6 +349,7 @@ def build_test_cases(
                     expect_content=True,
                     expect_finish_reason="stop",
                     expect_reasoning=expect_reasoning_content,
+                    expect_reasoning_warn_only=warn_only,
                 )
             )
             # Tool result follow-up: model should answer with content
@@ -297,6 +368,7 @@ def build_test_cases(
                     expect_content=True if re_val != "high" else None,
                     expect_finish_reason=None,
                     expect_reasoning=expect_reasoning_maybe,
+                    expect_reasoning_warn_only=warn_only,
                 )
             )
 
@@ -314,6 +386,7 @@ def build_test_cases(
                     expect_content=None,
                     expect_finish_reason="tool_calls",
                     expect_reasoning=expect_reasoning_maybe,
+                    expect_reasoning_warn_only=warn_only,
                 )
             )
             # --- tool_choice = named (specific function) ---
@@ -339,6 +412,7 @@ def build_test_cases(
                     expect_content=None,
                     expect_finish_reason=named_finish_reason,
                     expect_reasoning=expect_reasoning_maybe,
+                    expect_reasoning_warn_only=warn_only,
                 )
             )
             # Named tool but prompt doesn't naturally want it
@@ -358,6 +432,7 @@ def build_test_cases(
                     expect_content=None,
                     expect_finish_reason=named_finish_reason,
                     expect_reasoning=expect_reasoning_maybe,
+                    expect_reasoning_warn_only=warn_only,
                 )
             )
 
@@ -366,8 +441,13 @@ def build_test_cases(
             # grammar that constrains output to ``think? content`` (no
             # tool calls).  Whether reasoning is present depends on the
             # tokenizer version and reasoning_effort setting.
-            # When re_val == "none", reasoning is explicitly disabled.
-            expect_reasoning_none_mode = False if re_val == "none" else None
+            match re_val:
+                case "none":
+                    expect_reasoning_none_mode: bool | None = False
+                case "high":
+                    expect_reasoning_none_mode = True
+                case _:
+                    expect_reasoning_none_mode = None
             cases.append(
                 TestCase(
                     name=f"none_tool_prompt{sfx}",
@@ -381,6 +461,7 @@ def build_test_cases(
                     expect_content=True,
                     expect_finish_reason=None,
                     expect_reasoning=expect_reasoning_none_mode,
+                    expect_reasoning_warn_only=warn_only,
                 )
             )
             cases.append(
@@ -396,6 +477,263 @@ def build_test_cases(
                     expect_content=True,
                     expect_finish_reason=None,
                     expect_reasoning=expect_reasoning_none_mode,
+                    expect_reasoning_warn_only=warn_only,
+                )
+            )
+
+            # ---------------------------------------------------------------
+            # JSON / structured output + tool choice tests
+            #
+            # The Mistral grammar (via mistral-common) supports both tool
+            # calls and JSON output simultaneously.  When tool_choice is
+            # not "none" and a json_schema is provided, the grammar allows
+            # both paths and the model picks based on the prompt.  When
+            # tool_choice is "none", only JSON output is allowed.
+            # ---------------------------------------------------------------
+
+            # -- response_format (json_schema) tests --
+
+            # auto + json_schema: user asks for tool -> model calls tool
+            cases.append(
+                TestCase(
+                    name=f"json_rf_auto_tool_prompt{sfx}",
+                    description=(
+                        f"response_format=json_schema, tool_choice=auto, "
+                        f"user asks for tool{sfx}"
+                    ),
+                    messages=MESSAGES_WANT_TOOL_EXPLICITLY,
+                    tools=ALL_TOOLS,
+                    tool_choice="auto",
+                    stream=stream,
+                    reasoning_effort=re_val,
+                    expect_tool_calls=True,
+                    expect_content=None,
+                    expect_finish_reason="tool_calls",
+                    expect_reasoning=expect_reasoning_maybe,
+                    expect_reasoning_warn_only=warn_only,
+                    expect_json_content=False,
+                    response_format={
+                        "type": "json_schema",
+                        "json_schema": {
+                            "name": "weather_report",
+                            "schema": WEATHER_JSON_SCHEMA,
+                        },
+                    },
+                )
+            )
+            # auto + json_schema: user asks for JSON -> model outputs JSON
+            cases.append(
+                TestCase(
+                    name=f"json_rf_auto_json_prompt{sfx}",
+                    description=(
+                        f"response_format=json_schema, tool_choice=auto, "
+                        f"user asks for JSON{sfx}"
+                    ),
+                    messages=MESSAGES_WANT_JSON,
+                    tools=ALL_TOOLS,
+                    tool_choice="auto",
+                    stream=stream,
+                    reasoning_effort=re_val,
+                    expect_tool_calls=False,
+                    expect_content=True,
+                    expect_finish_reason="stop",
+                    expect_reasoning=expect_reasoning_content,
+                    expect_reasoning_warn_only=warn_only,
+                    expect_json_content=True,
+                    response_format={
+                        "type": "json_schema",
+                        "json_schema": {
+                            "name": "joke",
+                            "schema": JOKE_JSON_SCHEMA,
+                        },
+                    },
+                )
+            )
+            # required + json_schema: user asks for tool -> model calls tool
+            cases.append(
+                TestCase(
+                    name=f"json_rf_required_tool_prompt{sfx}",
+                    description=(
+                        f"response_format=json_schema, tool_choice=required, "
+                        f"user asks for tool{sfx}"
+                    ),
+                    messages=MESSAGES_WANT_TOOL_EXPLICITLY,
+                    tools=ALL_TOOLS,
+                    tool_choice="required",
+                    stream=stream,
+                    reasoning_effort=re_val,
+                    expect_tool_calls=True,
+                    expect_content=None,
+                    expect_finish_reason="tool_calls",
+                    expect_reasoning=expect_reasoning_maybe,
+                    expect_reasoning_warn_only=warn_only,
+                    expect_json_content=False,
+                    response_format={
+                        "type": "json_schema",
+                        "json_schema": {
+                            "name": "weather_report",
+                            "schema": WEATHER_JSON_SCHEMA,
+                        },
+                    },
+                )
+            )
+            # none + json_schema: user asks for tool but can't -> JSON output
+            # Grammar is ``think? SAFE_WS? %json`` — for re="high" we
+            # hard-fail if reasoning is absent (warn_only_none_json).
+            cases.append(
+                TestCase(
+                    name=f"json_rf_none_tool_prompt{sfx}",
+                    description=(
+                        f"response_format=json_schema, tool_choice=none, "
+                        f"user asks for tool (forced JSON){sfx}"
+                    ),
+                    messages=MESSAGES_WANT_TOOL_EXPLICITLY,
+                    tools=ALL_TOOLS,
+                    tool_choice="none",
+                    stream=stream,
+                    reasoning_effort=re_val,
+                    expect_tool_calls=False,
+                    expect_content=True,
+                    expect_finish_reason=None,
+                    expect_reasoning=expect_reasoning_none_mode,
+                    expect_reasoning_warn_only=warn_only_none_json,
+                    expect_json_content=True,
+                    response_format={
+                        "type": "json_schema",
+                        "json_schema": {
+                            "name": "joke",
+                            "schema": JOKE_JSON_SCHEMA,
+                        },
+                    },
+                )
+            )
+            # none + json_schema: user asks for JSON -> JSON output
+            cases.append(
+                TestCase(
+                    name=f"json_rf_none_json_prompt{sfx}",
+                    description=(
+                        f"response_format=json_schema, tool_choice=none, "
+                        f"user asks for JSON{sfx}"
+                    ),
+                    messages=MESSAGES_WANT_JSON,
+                    tools=ALL_TOOLS,
+                    tool_choice="none",
+                    stream=stream,
+                    reasoning_effort=re_val,
+                    expect_tool_calls=False,
+                    expect_content=True,
+                    expect_finish_reason=None,
+                    expect_reasoning=expect_reasoning_none_mode,
+                    expect_reasoning_warn_only=warn_only_none_json,
+                    expect_json_content=True,
+                    response_format={
+                        "type": "json_schema",
+                        "json_schema": {
+                            "name": "joke",
+                            "schema": JOKE_JSON_SCHEMA,
+                        },
+                    },
+                )
+            )
+
+            # -- structured_outputs (via extra_body) tests --
+
+            # auto + structured_outputs json: user asks for tool -> tool call
+            cases.append(
+                TestCase(
+                    name=f"json_so_auto_tool_prompt{sfx}",
+                    description=(
+                        f"structured_outputs=json, tool_choice=auto, "
+                        f"user asks for tool{sfx}"
+                    ),
+                    messages=MESSAGES_WANT_TOOL_EXPLICITLY,
+                    tools=ALL_TOOLS,
+                    tool_choice="auto",
+                    stream=stream,
+                    reasoning_effort=re_val,
+                    expect_tool_calls=True,
+                    expect_content=None,
+                    expect_finish_reason="tool_calls",
+                    expect_reasoning=expect_reasoning_maybe,
+                    expect_reasoning_warn_only=warn_only,
+                    expect_json_content=False,
+                    extra_body_overrides={
+                        "structured_outputs": {"json": WEATHER_JSON_SCHEMA},
+                    },
+                )
+            )
+            # auto + structured_outputs json: user asks for JSON -> JSON content
+            cases.append(
+                TestCase(
+                    name=f"json_so_auto_json_prompt{sfx}",
+                    description=(
+                        f"structured_outputs=json, tool_choice=auto, "
+                        f"user asks for JSON{sfx}"
+                    ),
+                    messages=MESSAGES_WANT_JSON,
+                    tools=ALL_TOOLS,
+                    tool_choice="auto",
+                    stream=stream,
+                    reasoning_effort=re_val,
+                    expect_tool_calls=False,
+                    expect_content=True,
+                    expect_finish_reason="stop",
+                    expect_reasoning=expect_reasoning_content,
+                    expect_reasoning_warn_only=warn_only,
+                    expect_json_content=True,
+                    extra_body_overrides={
+                        "structured_outputs": {"json": JOKE_JSON_SCHEMA},
+                    },
+                )
+            )
+            # none + structured_outputs json: user asks for tool but can't
+            # Grammar is ``think? SAFE_WS? %json`` — for re="high" we
+            # hard-fail if reasoning is absent (warn_only_none_json).
+            cases.append(
+                TestCase(
+                    name=f"json_so_none_tool_prompt{sfx}",
+                    description=(
+                        f"structured_outputs=json, tool_choice=none, "
+                        f"user asks for tool (forced JSON){sfx}"
+                    ),
+                    messages=MESSAGES_WANT_TOOL_EXPLICITLY,
+                    tools=ALL_TOOLS,
+                    tool_choice="none",
+                    stream=stream,
+                    reasoning_effort=re_val,
+                    expect_tool_calls=False,
+                    expect_content=True,
+                    expect_finish_reason=None,
+                    expect_reasoning=expect_reasoning_none_mode,
+                    expect_reasoning_warn_only=warn_only_none_json,
+                    expect_json_content=True,
+                    extra_body_overrides={
+                        "structured_outputs": {"json": JOKE_JSON_SCHEMA},
+                    },
+                )
+            )
+            # none + structured_outputs json: user asks for JSON -> JSON
+            cases.append(
+                TestCase(
+                    name=f"json_so_none_json_prompt{sfx}",
+                    description=(
+                        f"structured_outputs=json, tool_choice=none, "
+                        f"user asks for JSON{sfx}"
+                    ),
+                    messages=MESSAGES_WANT_JSON,
+                    tools=ALL_TOOLS,
+                    tool_choice="none",
+                    stream=stream,
+                    reasoning_effort=re_val,
+                    expect_tool_calls=False,
+                    expect_content=True,
+                    expect_finish_reason=None,
+                    expect_reasoning=expect_reasoning_none_mode,
+                    expect_reasoning_warn_only=warn_only_none_json,
+                    expect_json_content=True,
+                    extra_body_overrides={
+                        "structured_outputs": {"json": JOKE_JSON_SCHEMA},
+                    },
                 )
             )
 
@@ -413,6 +751,7 @@ class TestResult:
     stream: bool
     reasoning_effort: str | None
     passed: bool = False
+    warnings: int = 0
     checks: dict[str, dict[str, Any]] = field(default_factory=dict)
     error: str | None = None
     # Raw response data
@@ -429,8 +768,7 @@ class TestResult:
 def reconstruct_streaming(
     chunks: list,
 ) -> tuple[str | None, list[dict[str, Any]], str | None, str | None]:
-    """Reconstruct content, tool_calls, reasoning_content, and finish_reason
-    from a list of streaming ChatCompletionChunk objects."""
+    r"""Reconstruct content, tool_calls, reasoning_content, and finish_reason from streaming chunks."""
     content_parts: list[str] = []
     reasoning_parts: list[str] = []
     tool_map: dict[int, dict[str, Any]] = {}  # index -> {id, name, arguments}
@@ -450,7 +788,7 @@ def reconstruct_streaming(
         if delta.content:
             content_parts.append(delta.content)
 
-        # Reasoning content — vLLM uses the field name ``reasoning``
+        # Reasoning content -- vLLM uses the field name ``reasoning``
         rc = getattr(delta, "reasoning", None) or getattr(
             delta, "reasoning_content", None
         )
@@ -485,7 +823,6 @@ def reconstruct_streaming(
                 "arguments": tc["arguments"],
             },
         }
-        # Try to parse arguments as JSON
         try:
             entry["function"]["arguments_parsed"] = json.loads(tc["arguments"])
         except (json.JSONDecodeError, TypeError):
@@ -503,7 +840,7 @@ async def run_single_test(
     model: str,
     tc: TestCase,
 ) -> TestResult:
-    """Run a single test case and return the result."""
+    r"""Run a single test case and return the result."""
     result = TestResult(
         name=tc.name,
         description=tc.description,
@@ -526,9 +863,18 @@ async def run_single_test(
             "stream": tc.stream,
         }
 
-        # reasoning_effort is a vLLM extension; pass via extra_body when set.
+        # response_format for JSON schema tests
+        if tc.response_format is not None:
+            kwargs["response_format"] = tc.response_format
+
+        # Build extra_body: merge reasoning_effort + any overrides
+        extra_body: dict[str, Any] = {}
         if tc.reasoning_effort is not None:
-            kwargs["extra_body"] = {"reasoning_effort": tc.reasoning_effort}
+            extra_body["reasoning_effort"] = tc.reasoning_effort
+        if tc.extra_body_overrides is not None:
+            extra_body.update(tc.extra_body_overrides)
+        if extra_body:
+            kwargs["extra_body"] = extra_body
 
         if tc.stream:
             stream = await client.chat.completions.create(**kwargs)
@@ -549,7 +895,7 @@ async def run_single_test(
             result.content = choice.message.content
             result.finish_reason = choice.finish_reason
 
-            # Reasoning content — vLLM uses the field name ``reasoning``
+            # Reasoning content -- vLLM uses the field name ``reasoning``
             rc = getattr(choice.message, "reasoning", None) or getattr(
                 choice.message, "reasoning_content", None
             )
@@ -584,6 +930,7 @@ async def run_single_test(
 
     # ----- Validation checks -----
     all_ok = True
+    warn_count = 0
 
     # Check: no HTTP / server error
     result.checks["no_error"] = {"expected": "no error", "actual": "ok", "passed": True}
@@ -685,14 +1032,14 @@ async def run_single_test(
         if not ok:
             all_ok = False
 
-    # Check: reasoning content presence
+    # Check: reasoning content presence (warning-only when configured)
     has_reasoning = (
         result.reasoning_content is not None
         and len(result.reasoning_content.strip()) > 0
     )
     if tc.expect_reasoning is True:
         ok = has_reasoning
-        result.checks["reasoning_present"] = {
+        check_entry: dict[str, Any] = {
             "expected": "reasoning content present",
             "actual": (
                 f"reasoning ({len(result.reasoning_content)} chars)"
@@ -702,10 +1049,15 @@ async def run_single_test(
             "passed": ok,
         }
         if not ok:
-            all_ok = False
+            if tc.expect_reasoning_warn_only:
+                check_entry["warned"] = True
+                warn_count += 1
+            else:
+                all_ok = False
+        result.checks["reasoning_present"] = check_entry
     elif tc.expect_reasoning is False:
         ok = not has_reasoning
-        result.checks["no_reasoning"] = {
+        check_entry = {
             "expected": "no reasoning content",
             "actual": (
                 "no reasoning content"
@@ -715,9 +1067,45 @@ async def run_single_test(
             "passed": ok,
         }
         if not ok:
+            if tc.expect_reasoning_warn_only:
+                check_entry["warned"] = True
+                warn_count += 1
+            else:
+                all_ok = False
+        result.checks["no_reasoning"] = check_entry
+    else:
+        # expect_reasoning is None — no pass/fail, but always report the
+        # observed reasoning status so it is visible in the output.
+        reasoning_actual = (
+            f"reasoning ({len(result.reasoning_content)} chars)"
+            if has_reasoning
+            else "no reasoning content"
+        )
+        result.checks["reasoning_info"] = {
+            "expected": "not checked",
+            "actual": reasoning_actual,
+            "passed": True,  # informational, always passes
+        }
+
+    # Check: JSON content validity
+    if tc.expect_json_content and has_content:
+        try:
+            json.loads(result.content)
+            result.checks["json_content_valid"] = {
+                "expected": "valid JSON content",
+                "actual": "valid JSON",
+                "passed": True,
+            }
+        except (json.JSONDecodeError, TypeError) as exc:
+            result.checks["json_content_valid"] = {
+                "expected": "valid JSON content",
+                "actual": f"invalid JSON: {exc}",
+                "passed": False,
+            }
             all_ok = False
 
     result.passed = all_ok
+    result.warnings = warn_count
     return result
 
 
@@ -725,7 +1113,12 @@ async def run_single_test(
 # Pretty printing
 # ---------------------------------------------------------------------------
 def print_result(result: TestResult, index: int, total: int) -> None:
-    status = green("PASS") if result.passed else red("FAIL")
+    if result.passed and result.warnings > 0:
+        status = yellow("PASS") + " \u26a0\ufe0f"
+    elif result.passed:
+        status = green("PASS")
+    else:
+        status = red("FAIL")
     stream_tag = cyan("stream") if result.stream else dim("no-stream")
     re_tag = _reasoning_effort_label(result.reasoning_effort)
 
@@ -747,7 +1140,12 @@ def print_result(result: TestResult, index: int, total: int) -> None:
         print(f"  {red('ERROR:')} {result.error[:200]}")
 
     for check_name, check_info in result.checks.items():
-        icon = green("OK") if check_info["passed"] else red("FAIL")
+        if check_info["passed"]:
+            icon = green("OK")
+        elif check_info.get("warned"):
+            icon = yellow("\u26a0\ufe0f")
+        else:
+            icon = red("FAIL")
         print(
             f"    [{icon}] {check_name}: "
             f"expected={check_info['expected']}, "
@@ -775,29 +1173,31 @@ def print_result(result: TestResult, index: int, total: int) -> None:
 
 
 def print_summary_table(results: list[TestResult]) -> None:
-    """Print a nice ASCII summary table."""
-    print(f"\n\n{'=' * 96}")
-    print(bold("                              SUMMARY TABLE"))
-    print(f"{'=' * 96}")
+    r"""Print a nice ASCII summary table."""
+    print(f"\n\n{'=' * 115}")
+    print(bold("                                       SUMMARY TABLE"))
+    print(f"{'=' * 115}")
 
     # Column widths
-    col_name = 38
+    col_name = 40
     col_tc = 12
     col_mode = 11
     col_re = 9
-    col_status = 8
+    col_reasoning = 12
+    col_status = 10
     col_dur = 8
 
     header = (
         f"{'Test Name':<{col_name}} "
         f"{'Tool Choice':<{col_tc}} "
         f"{'Mode':<{col_mode}} "
-        f"{'Reason':<{col_re}} "
+        f"{'RE Sent':<{col_re}} "
+        f"{'Reasoning?':<{col_reasoning}} "
         f"{'Status':<{col_status}} "
         f"{'Time':<{col_dur}}"
     )
     print(bold(header))
-    print("-" * 96)
+    print("-" * 115)
 
     for r in results:
         tc_str = (
@@ -807,7 +1207,24 @@ def print_summary_table(results: list[TestResult]) -> None:
         )
         mode = "stream" if r.stream else "non-stream"
         re_str = str(r.reasoning_effort) if r.reasoning_effort is not None else "-"
-        status = green("PASS") if r.passed else red("FAIL")
+
+        # Determine whether reasoning content was actually present
+        has_reasoning = (
+            r.reasoning_content is not None and len(r.reasoning_content.strip()) > 0
+        )
+        reasoning_str = green("yes") if has_reasoning else red("no")
+        reasoning_ansi = 9  # ANSI escape overhead
+
+        if r.passed and r.warnings > 0:
+            status = yellow("PASS") + "\u26a0\ufe0f"
+            ansi_extra = 12  # ANSI codes + emoji
+        elif r.passed:
+            status = green("PASS")
+            ansi_extra = 9
+        else:
+            status = red("FAIL")
+            ansi_extra = 9
+
         dur = f"{r.duration_s:.2f}s"
 
         # Truncate name if needed
@@ -820,21 +1237,24 @@ def print_summary_table(results: list[TestResult]) -> None:
             f"{tc_str:<{col_tc}} "
             f"{mode:<{col_mode}} "
             f"{re_str:<{col_re}} "
-            f"{status:<{col_status + 9}} "  # +9 for ANSI escape codes
+            f"{reasoning_str:<{col_reasoning + reasoning_ansi}} "
+            f"{status:<{col_status + ansi_extra}} "
             f"{dur:<{col_dur}}"
         )
 
-    print("-" * 96)
+    print("-" * 115)
 
     passed = sum(1 for r in results if r.passed)
     failed = sum(1 for r in results if not r.passed)
+    warned = sum(1 for r in results if r.passed and r.warnings > 0)
     total = len(results)
     total_time = sum(r.duration_s for r in results)
 
     summary_color = green if failed == 0 else red
+    warn_str = f" ({warned} with warnings)" if warned > 0 else ""
     print(
         summary_color(
-            f"\n  {passed}/{total} passed, {failed} failed  "
+            f"\n  {passed}/{total} passed{warn_str}, {failed} failed  "
             f"(total time: {total_time:.2f}s)"
         )
     )
@@ -843,10 +1263,21 @@ def print_summary_table(results: list[TestResult]) -> None:
         print(f"\n  {red('Failed tests:')}")
         for r in results:
             if not r.passed:
-                failed_checks = [k for k, v in r.checks.items() if not v["passed"]]
+                failed_checks = [
+                    k
+                    for k, v in r.checks.items()
+                    if not v["passed"] and not v.get("warned")
+                ]
                 print(f"    - {r.name}: {', '.join(failed_checks)}")
                 if r.error:
                     print(f"      error: {r.error[:150]}")
+
+    if warned > 0:
+        print(f"\n  {yellow('Tests with warnings:')}")
+        for r in results:
+            if r.passed and r.warnings > 0:
+                warned_checks = [k for k, v in r.checks.items() if v.get("warned")]
+                print(f"    - {r.name}: {', '.join(warned_checks)}")
 
     print()
 
@@ -857,7 +1288,7 @@ def print_summary_table(results: list[TestResult]) -> None:
 def export_results(
     results: list[TestResult], path: str, model: str, base_url: str
 ) -> None:
-    """Write detailed results to a JSON file."""
+    r"""Write detailed results to a JSON file."""
     data = {
         "metadata": {
             "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -866,18 +1297,24 @@ def export_results(
             "total_tests": len(results),
             "passed": sum(1 for r in results if r.passed),
             "failed": sum(1 for r in results if not r.passed),
+            "warned": sum(1 for r in results if r.passed and r.warnings > 0),
         },
         "results": [],
     }
 
     for r in results:
+        has_reasoning = (
+            r.reasoning_content is not None and len(r.reasoning_content.strip()) > 0
+        )
         entry = {
             "name": r.name,
             "description": r.description,
             "tool_choice": r.tool_choice,
             "stream": r.stream,
             "reasoning_effort": r.reasoning_effort,
+            "reasoning_present": has_reasoning,
             "passed": r.passed,
+            "warnings": r.warnings,
             "duration_s": r.duration_s,
             "finish_reason": r.finish_reason,
             "checks": r.checks,
@@ -901,7 +1338,8 @@ async def main() -> int:
     parser = argparse.ArgumentParser(
         description=(
             "Test vLLM tool calling (auto / required / named / none, "
-            "streaming & non-streaming, reasoning_effort: None / none / high)"
+            "streaming & non-streaming, reasoning_effort: None / none / high) "
+            "including JSON/structured output interaction with tool choice."
         ),
     )
     parser.add_argument(
